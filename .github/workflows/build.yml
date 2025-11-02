@@ -146,6 +146,13 @@ jobs:
               
               # Create injection with proper formatting (like PowerShell script)
               timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+              env_file_path = os.environ.get('GITHUB_ENV')
+              if env_file_path:
+                  with open(env_file_path, 'a') as f:
+                      f.write(f"BUILD_DATE={timestamp}\n")
+                  log(f"✅ Build date set to: {timestamp}")
+              else:
+                  log("⚠️ GITHUB_ENV not found, build date will not be available.")
               injection = f"// === {tag} Start ===\n"
               injection += f"// 注入时间: {timestamp}\n"
               injection += f"// 注入版本: 1.0\n"
@@ -652,7 +659,7 @@ jobs:
             ## 🔧 Technical Details
             - **Base Version**: v${{ env.VERSION }}
             - **Injection Type**: Triple
-            - **Build Date**: ${{ format('{0:2006-01-02 15:04:05 UTC}', github.job.started_at) }}
+            - **Build Date**: ${{ env.BUILD_DATE }}
             - **Auto-built**: Yes (GitHub Actions)
 
             ---
