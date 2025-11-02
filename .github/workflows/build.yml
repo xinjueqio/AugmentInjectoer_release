@@ -652,7 +652,7 @@ jobs:
             ## 🔧 Technical Details
             - **Base Version**: v${{ env.VERSION }}
             - **Injection Type**: Triple
-            - **Build Date**: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+            - **Build Date**: ${{ format('{0:2006-01-02 15:04:05 UTC}', github.run_started_at) }}
             - **Auto-built**: Yes (GitHub Actions)
 
             ---
