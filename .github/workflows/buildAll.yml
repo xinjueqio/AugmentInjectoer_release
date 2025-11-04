@@ -1,4 +1,4 @@
-name: Build Augment Injector Release
+name: Build Augment Injector All Release
 
 on:
   workflow_dispatch:
