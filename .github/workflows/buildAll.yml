@@ -77,7 +77,7 @@ jobs:
           --compressed -o all_versions.json
           
           # Extract all versions from JSON
-          python3 << 'EOF'
+          python3 << 'PYEOF'
           import json
           
           # Read version data
@@ -110,7 +110,7 @@ jobs:
           with open('version_env.txt', 'w') as f:
               f.write(f"LATEST_VERSION={latest_version}\n")
               f.write(f"TOTAL_VERSIONS={len(versions)}\n")
-          EOF
+          PYEOF
           
           # Load environment variables
           source version_env.txt
@@ -232,7 +232,7 @@ jobs:
             # Perform injection and build
             echo "🚀 Performing triple injection for version $VERSION..."
             
-            python3 << 'EOF'
+            python3 << 'PYEOF'
             import os, sys, shutil, json, re, stat
             from pathlib import Path
             from datetime import datetime
@@ -323,123 +323,117 @@ jobs:
                 interceptor_content = (resources / 'interceptor.js').read_text(encoding='utf-8')
 
                 # Prepare loader snippets
-                token_loader = """
-                // Token登录增强模块注入（仅模块初始化）
-                !function(){
-                "use strict";
-                try {
-                    const AugmentTokenLoginEnhanced = require('./token-login-enhanced.js');
-                    if (typeof global !== 'undefined') {
-                        global.augmentTokenLoginInstance = new AugmentTokenLoginEnhanced();
-                        console.log('[TokenLogin] Global instance created successfully');
-                    }
-                } catch (error) {
-                    console.error('[TokenLogin] Module initialization failed:', error);
+                token_loader = """// Token登录增强模块注入（仅模块初始化）
+            !function(){
+            "use strict";
+            try {
+                const AugmentTokenLoginEnhanced = require('./token-login-enhanced.js');
+                if (typeof global !== 'undefined') {
+                    global.augmentTokenLoginInstance = new AugmentTokenLoginEnhanced();
+                    console.log('[TokenLogin] Global instance created successfully');
                 }
-                }();
-                """.strip()
+            } catch (error) {
+                console.error('[TokenLogin] Module initialization failed:', error);
+            }
+            }();"""
 
-                balance_loader = """
-                // 余额显示增强模块注入（仅模块初始化）
-                !function(){
-                "use strict";
-                try {
-                    const AugmentBalanceEnhanced = require('./augment-balance-enhanced.js');
-                    if (typeof global !== 'undefined') {
-                        global.augmentBalanceInstance = new AugmentBalanceEnhanced();
-                        console.log('[BalanceEnhanced] Global instance created successfully');
-                    }
-                } catch (error) {
-                    console.error('[BalanceEnhanced] Module initialization failed:', error);
+                balance_loader = """// 余额显示增强模块注入（仅模块初始化）
+            !function(){
+            "use strict";
+            try {
+                const AugmentBalanceEnhanced = require('./augment-balance-enhanced.js');
+                if (typeof global !== 'undefined') {
+                    global.augmentBalanceInstance = new AugmentBalanceEnhanced();
+                    console.log('[BalanceEnhanced] Global instance created successfully');
                 }
-                }();
-                """.strip()
+            } catch (error) {
+                console.error('[BalanceEnhanced] Module initialization failed:', error);
+            }
+            }();"""
 
-                triple_exports_handler = """
-                // 三重注入统一exports处理
-                !function(){
-                "use strict";
-                try {
-                    const originalActivate = (typeof module !== 'undefined' && module.exports && module.exports.activate)
-                        ? module.exports.activate
-                        : (context) => {};
-                    const originalDeactivate = (typeof module !== 'undefined' && module.exports && module.exports.deactivate)
-                        ? module.exports.deactivate
-                        : () => {};
+                triple_exports_handler = """// 三重注入统一exports处理
+            !function(){
+            "use strict";
+            try {
+                const originalActivate = (typeof module !== 'undefined' && module.exports && module.exports.activate)
+                    ? module.exports.activate
+                    : (context) => {};
+                const originalDeactivate = (typeof module !== 'undefined' && module.exports && module.exports.deactivate)
+                    ? module.exports.deactivate
+                    : () => {};
 
-                    async function tripleActivate(context) {
-                        try {
-                            if (typeof originalActivate === 'function') {
-                                await originalActivate(context);
-                            }
-                            if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
-                                try {
-                                    await global.augmentTokenLoginInstance.initialize(context);
-                                } catch (error) {
-                                    console.error('[TripleInjection] Token login initialization failed:', error);
-                                }
-                            }
-                            if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
-                                try {
-                                    await global.augmentBalanceInstance.initialize(context);
-                                } catch (error) {
-                                    console.error('[TripleInjection] Balance display initialization failed:', error);
-                                }
-                            }
-                        } catch (error) {
-                            console.error('[TripleInjection] Triple activation failed:', error);
-                            throw error;
+                async function tripleActivate(context) {
+                    try {
+                        if (typeof originalActivate === 'function') {
+                            await originalActivate(context);
                         }
-                    }
-
-                    function tripleDeactivate() {
-                        try {
-                            if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
-                                try {
-                                    if (typeof global.augmentBalanceInstance.dispose === 'function') {
-                                        global.augmentBalanceInstance.dispose();
-                                    }
-                                } catch (error) {
-                                    console.error('[TripleInjection] Balance display disposal failed:', error);
-                                }
-                            }
-                            if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
-                                try {
-                                    if (typeof global.augmentTokenLoginInstance.dispose === 'function') {
-                                        global.augmentTokenLoginInstance.dispose();
-                                    }
-                                } catch (error) {
-                                    console.error('[TripleInjection] Token login disposal failed:', error);
-                                }
-                            }
-                            if (typeof originalDeactivate === 'function') {
-                                originalDeactivate();
-                            }
-                        } catch (error) {
-                            console.error('[TripleInjection] Triple deactivation failed:', error);
-                        }
-                    }
-
-                    if (typeof module !== 'undefined' && module.exports) {
-                        const newExports = {};
-                        for (const key in module.exports) {
-                            if (key !== 'activate' && key !== 'deactivate') {
-                                try {
-                                    newExports[key] = module.exports[key];
-                                } catch (error) {
-                                    console.warn(`[TripleInjection] Failed to copy property ${key}:`, error);
-                                }
+                        if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
+                            try {
+                                await global.augmentTokenLoginInstance.initialize(context);
+                            } catch (error) {
+                                console.error('[TripleInjection] Token login initialization failed:', error);
                             }
                         }
-                        newExports.activate = tripleActivate;
-                        newExports.deactivate = tripleDeactivate;
-                        module.exports = newExports;
+                        if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
+                            try {
+                                await global.augmentBalanceInstance.initialize(context);
+                            } catch (error) {
+                                console.error('[TripleInjection] Balance display initialization failed:', error);
+                            }
+                        }
+                    } catch (error) {
+                        console.error('[TripleInjection] Triple activation failed:', error);
+                        throw error;
                     }
-                } catch (error) {
-                    console.error('[TripleInjection] Triple exports handler failed:', error);
                 }
-                }();
-                """.strip()
+
+                function tripleDeactivate() {
+                    try {
+                        if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
+                            try {
+                                if (typeof global.augmentBalanceInstance.dispose === 'function') {
+                                    global.augmentBalanceInstance.dispose();
+                                }
+                            } catch (error) {
+                                console.error('[TripleInjection] Balance display disposal failed:', error);
+                            }
+                        }
+                        if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
+                            try {
+                                if (typeof global.augmentTokenLoginInstance.dispose === 'function') {
+                                    global.augmentTokenLoginInstance.dispose();
+                                }
+                            } catch (error) {
+                                console.error('[TripleInjection] Token login disposal failed:', error);
+                            }
+                        }
+                        if (typeof originalDeactivate === 'function') {
+                            originalDeactivate();
+                        }
+                    } catch (error) {
+                        console.error('[TripleInjection] Triple deactivation failed:', error);
+                    }
+                }
+
+                if (typeof module !== 'undefined' && module.exports) {
+                    const newExports = {};
+                    for (const key in module.exports) {
+                        if (key !== 'activate' && key !== 'deactivate') {
+                            try {
+                                newExports[key] = module.exports[key];
+                            } catch (error) {
+                                console.warn(`[TripleInjection] Failed to copy property ${key}:`, error);
+                            }
+                        }
+                    }
+                    newExports.activate = tripleActivate;
+                    newExports.deactivate = tripleDeactivate;
+                    module.exports = newExports;
+                }
+            } catch (error) {
+                console.error('[TripleInjection] Triple exports handler failed:', error);
+            }
+            }();"""
 
                 # Copy module files
                 shutil.copy(resources / 'token-login-enhanced.js', js_dir / 'token-login-enhanced.js')
@@ -456,12 +450,12 @@ jobs:
                 
             except Exception as e:
                 error(f"Injection failed: {e}")
-            EOF
+            PYEOF
             
             # Update package.json
             echo "📝 Updating package.json for version $VERSION..."
             
-            python3 << 'EOF'
+            python3 << 'PYEOF'
             import json
             from pathlib import Path
 
@@ -543,12 +537,12 @@ jobs:
             except Exception as e:
                 print(f"[ERROR] Failed to update package.json: {e}")
                 exit(1)
-            EOF
+            PYEOF
             
             # Merge README
             echo "📄 Merging README for version $VERSION..."
             
-            python3 << 'EOF'
+            python3 << 'PYEOF'
             from pathlib import Path
 
             try:
@@ -583,7 +577,7 @@ jobs:
             except Exception as e:
                 print(f"[ERROR] Failed to merge README: {e}")
                 exit(1)
-            EOF
+            PYEOF
             
             # Package VSIX
             echo "📦 Packaging modified VSIX for version $VERSION..."
@@ -721,7 +715,7 @@ jobs:
           # Perform Triple Injection
           echo "🚀 Performing triple injection for version $VERSION..."
           
-          python3 << 'EOF'
+          python3 << 'PYEOF'
           import os, sys, shutil, json, re, stat
           from pathlib import Path
           from datetime import datetime
@@ -812,123 +806,117 @@ jobs:
               interceptor_content = (resources / 'interceptor.js').read_text(encoding='utf-8')
 
               # Prepare loader snippets
-              token_loader = """
-              // Token登录增强模块注入（仅模块初始化）
-              !function(){
-              "use strict";
-              try {
-                  const AugmentTokenLoginEnhanced = require('./token-login-enhanced.js');
-                  if (typeof global !== 'undefined') {
-                      global.augmentTokenLoginInstance = new AugmentTokenLoginEnhanced();
-                      console.log('[TokenLogin] Global instance created successfully');
-                  }
-              } catch (error) {
-                  console.error('[TokenLogin] Module initialization failed:', error);
+              token_loader = """// Token登录增强模块注入（仅模块初始化）
+          !function(){
+          "use strict";
+          try {
+              const AugmentTokenLoginEnhanced = require('./token-login-enhanced.js');
+              if (typeof global !== 'undefined') {
+                  global.augmentTokenLoginInstance = new AugmentTokenLoginEnhanced();
+                  console.log('[TokenLogin] Global instance created successfully');
               }
-              }();
-              """.strip()
+          } catch (error) {
+              console.error('[TokenLogin] Module initialization failed:', error);
+          }
+          }();"""
 
-              balance_loader = """
-              // 余额显示增强模块注入（仅模块初始化）
-              !function(){
-              "use strict";
-              try {
-                  const AugmentBalanceEnhanced = require('./augment-balance-enhanced.js');
-                  if (typeof global !== 'undefined') {
-                      global.augmentBalanceInstance = new AugmentBalanceEnhanced();
-                      console.log('[BalanceEnhanced] Global instance created successfully');
-                  }
-              } catch (error) {
-                  console.error('[BalanceEnhanced] Module initialization failed:', error);
+              balance_loader = """// 余额显示增强模块注入（仅模块初始化）
+          !function(){
+          "use strict";
+          try {
+              const AugmentBalanceEnhanced = require('./augment-balance-enhanced.js');
+              if (typeof global !== 'undefined') {
+                  global.augmentBalanceInstance = new AugmentBalanceEnhanced();
+                  console.log('[BalanceEnhanced] Global instance created successfully');
               }
-              }();
-              """.strip()
+          } catch (error) {
+              console.error('[BalanceEnhanced] Module initialization failed:', error);
+          }
+          }();"""
 
-              triple_exports_handler = """
-              // 三重注入统一exports处理
-              !function(){
-              "use strict";
-              try {
-                  const originalActivate = (typeof module !== 'undefined' && module.exports && module.exports.activate)
-                      ? module.exports.activate
-                      : (context) => {};
-                  const originalDeactivate = (typeof module !== 'undefined' && module.exports && module.exports.deactivate)
-                      ? module.exports.deactivate
-                      : () => {};
+              triple_exports_handler = """// 三重注入统一exports处理
+          !function(){
+          "use strict";
+          try {
+              const originalActivate = (typeof module !== 'undefined' && module.exports && module.exports.activate)
+                  ? module.exports.activate
+                  : (context) => {};
+              const originalDeactivate = (typeof module !== 'undefined' && module.exports && module.exports.deactivate)
+                  ? module.exports.deactivate
+                  : () => {};
 
-                  async function tripleActivate(context) {
-                      try {
-                          if (typeof originalActivate === 'function') {
-                              await originalActivate(context);
-                          }
-                          if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
-                              try {
-                                  await global.augmentTokenLoginInstance.initialize(context);
-                              } catch (error) {
-                                  console.error('[TripleInjection] Token login initialization failed:', error);
-                              }
-                          }
-                          if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
-                              try {
-                                  await global.augmentBalanceInstance.initialize(context);
-                              } catch (error) {
-                                  console.error('[TripleInjection] Balance display initialization failed:', error);
-                              }
-                          }
-                      } catch (error) {
-                          console.error('[TripleInjection] Triple activation failed:', error);
-                          throw error;
+              async function tripleActivate(context) {
+                  try {
+                      if (typeof originalActivate === 'function') {
+                          await originalActivate(context);
                       }
-                  }
-
-                  function tripleDeactivate() {
-                      try {
-                          if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
-                              try {
-                                  if (typeof global.augmentBalanceInstance.dispose === 'function') {
-                                      global.augmentBalanceInstance.dispose();
-                                  }
-                              } catch (error) {
-                                  console.error('[TripleInjection] Balance display disposal failed:', error);
-                              }
-                          }
-                          if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
-                              try {
-                                  if (typeof global.augmentTokenLoginInstance.dispose === 'function') {
-                                      global.augmentTokenLoginInstance.dispose();
-                                  }
-                              } catch (error) {
-                                  console.error('[TripleInjection] Token login disposal failed:', error);
-                              }
-                          }
-                          if (typeof originalDeactivate === 'function') {
-                              originalDeactivate();
-                          }
-                      } catch (error) {
-                          console.error('[TripleInjection] Triple deactivation failed:', error);
-                      }
-                  }
-
-                  if (typeof module !== 'undefined' && module.exports) {
-                      const newExports = {};
-                      for (const key in module.exports) {
-                          if (key !== 'activate' && key !== 'deactivate') {
-                              try {
-                                  newExports[key] = module.exports[key];
-                              } catch (error) {
-                                  console.warn(`[TripleInjection] Failed to copy property ${key}:`, error);
-                              }
+                      if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
+                          try {
+                              await global.augmentTokenLoginInstance.initialize(context);
+                          } catch (error) {
+                              console.error('[TripleInjection] Token login initialization failed:', error);
                           }
                       }
-                      newExports.activate = tripleActivate;
-                      newExports.deactivate = tripleDeactivate;
-                      module.exports = newExports;
+                      if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
+                          try {
+                              await global.augmentBalanceInstance.initialize(context);
+                          } catch (error) {
+                              console.error('[TripleInjection] Balance display initialization failed:', error);
+                          }
+                      }
+                  } catch (error) {
+                      console.error('[TripleInjection] Triple activation failed:', error);
+                      throw error;
                   }
-              } catch (error) {
-                  console.error('[TripleInjection] Triple exports handler failed:', error);
               }
-              }();
-              """.strip()
+
+              function tripleDeactivate() {
+                  try {
+                      if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
+                          try {
+                              if (typeof global.augmentBalanceInstance.dispose === 'function') {
+                                  global.augmentBalanceInstance.dispose();
+                              }
+                          } catch (error) {
+                              console.error('[TripleInjection] Balance display disposal failed:', error);
+                          }
+                      }
+                      if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
+                          try {
+                              if (typeof global.augmentTokenLoginInstance.dispose === 'function') {
+                                  global.augmentTokenLoginInstance.dispose();
+                              }
+                          } catch (error) {
+                              console.error('[TripleInjection] Token login disposal failed:', error);
+                          }
+                      }
+                      if (typeof originalDeactivate === 'function') {
+                          originalDeactivate();
+                      }
+                  } catch (error) {
+                      console.error('[TripleInjection] Triple deactivation failed:', error);
+                  }
+              }
+
+              if (typeof module !== 'undefined' && module.exports) {
+                  const newExports = {};
+                  for (const key in module.exports) {
+                      if (key !== 'activate' && key !== 'deactivate') {
+                          try {
+                              newExports[key] = module.exports[key];
+                          } catch (error) {
+                              console.warn(`[TripleInjection] Failed to copy property ${key}:`, error);
+                          }
+                      }
+                  }
+                  newExports.activate = tripleActivate;
+                  newExports.deactivate = tripleDeactivate;
+                  module.exports = newExports;
+              }
+          } catch (error) {
+              console.error('[TripleInjection] Triple exports handler failed:', error);
+          }
+          }();"""
 
               # Copy module files
               shutil.copy(resources / 'token-login-enhanced.js', js_dir / 'token-login-enhanced.js')
@@ -945,12 +933,12 @@ jobs:
               
           except Exception as e:
               error(f"Injection failed: {e}")
-          EOF
+          PYEOF
           
           # Update package.json
           echo "📝 Updating package.json commands for version $VERSION..."
           
-          python3 << 'EOF'
+          python3 << 'PYEOF'
           import json
           from pathlib import Path
 
@@ -1032,12 +1020,12 @@ jobs:
           except Exception as e:
               print(f"[ERROR] Failed to update package.json: {e}")
               exit(1)
-          EOF
+          PYEOF
           
           # Merge README
           echo "📄 Merging README for version $VERSION..."
           
-          python3 << 'EOF'
+          python3 << 'PYEOF'
           from pathlib import Path
 
           try:
@@ -1072,7 +1060,7 @@ jobs:
           except Exception as e:
               print(f"[ERROR] Failed to merge README: {e}")
               exit(1)
-          EOF
+          PYEOF
           
           # Package VSIX
           echo "📦 Packaging modified VSIX for version $VERSION..."
