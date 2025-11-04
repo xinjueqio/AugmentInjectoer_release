@@ -11,6 +11,10 @@ on:
       target_version:
         description: '指定版本号（当 mode=specific 时生效，例如 0.627.0）'
         required: false
+      start_index:
+        description: '全量构建时的起始索引（默认 0，内部批次续跑使用）'
+        required: false
+        default: '0'
   schedule:
     - cron: '0 */2 * * *'
 
@@ -58,6 +62,7 @@ jobs:
               'X-Market-User-Id': 'df23a44f-eb51-4249-86fa-d399f925367d',
           }
 
+          MAX_MATRIX = 256
 
           def fail(message: str) -> None:
               print(f'[ERROR] {message}')
@@ -66,6 +71,14 @@ jobs:
 
           target_version = (os.environ.get('INPUT_TARGET_VERSION') or '').strip()
           mode_input = (os.environ.get('INPUT_MODE') or '').strip().lower()
+          start_index_raw = (os.environ.get('INPUT_START_INDEX') or '0').strip()
+          try:
+              start_index = int(start_index_raw or '0')
+          except ValueError:
+              fail(f'起始索引不是有效的整数: {start_index_raw!r}')
+          if start_index < 0:
+              print(f"[WARN] 起始索引 {start_index} 小于 0，将重置为 0")
+              start_index = 0
           if not mode_input:
               mode = 'specific' if target_version else 'latest'
           else:
@@ -107,30 +120,50 @@ jobs:
           print(f'[INFO] 市场返回 {len(all_versions)} 个版本，最新版本为 {all_versions[0]}')
           if mode == 'latest':
               selected = [all_versions[0]]
+              start_index = 0
           elif mode == 'specific':
               if target_version not in all_versions:
                   fail(f'指定版本 {target_version} 不存在于市场版本列表中')
               selected = [target_version]
+              start_index = 0
           else:
               selected = all_versions
 
-          preview = ', '.join(selected[:5])
-          if len(selected) > 5:
-              preview += ', ...'
-          print(f'[INFO] 本次将构建 {len(selected)} 个版本: {preview}')
+          total_versions = len(selected)
+          if start_index >= total_versions:
+              subset = []
+          else:
+              subset = selected[start_index:start_index + MAX_MATRIX]
+
+          if subset:
+              preview = ', '.join(subset[:5])
+              if len(subset) > 5:
+                  preview += ', ...'
+              print(f'[INFO] 本次批次将构建 {len(subset)} 个版本，范围索引 {start_index} - {start_index + len(subset) - 1}')
+              print(f'[INFO] 预览: {preview}')
+          else:
+              print(f'[WARN] 起始索引 {start_index} 超出可用版本数量 {total_versions}，本批次不执行构建')
 
           output_path = os.environ.get('GITHUB_OUTPUT')
           if not output_path:
               fail('GITHUB_OUTPUT 未设置')
 
+          next_start_index = start_index + len(subset)
+          has_more = next_start_index < total_versions
+
           with open(output_path, 'a', encoding='utf-8') as handler:
               handler.write(f'mode={mode}\n')
-              handler.write(f'version_count={len(selected)}\n')
-              handler.write('version_list=' + json.dumps(selected) + '\n')
+              handler.write(f'version_count={len(subset)}\n')
+              handler.write('version_list=' + json.dumps(subset) + '\n')
+              handler.write(f'total_count={total_versions}\n')
+              handler.write(f'start_index={start_index}\n')
+              handler.write(f'next_start_index={next_start_index}\n')
+              handler.write(f'has_more={str(has_more).lower()}\n')
           PY
         env:
           INPUT_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.mode || '' }}
           INPUT_TARGET_VERSION: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.target_version || '' }}
+          INPUT_START_INDEX: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.start_index || '0' }}
 
   build-and-release:
     name: Build and Release (${{ matrix.version }})
@@ -823,3 +856,26 @@ jobs:
           echo "🎉 Build and release completed successfully!"
           echo "📦 Released: augment.vscode-augment-${{ env.VERSION }}-triple.vsix"
           echo "🏷️  Tag: v${{ env.VERSION }}-triple"
+
+  queue-next-batch:
+    needs:
+      - prepare-versions
+      - build-and-release
+    if: ${{ needs.prepare-versions.outputs.has_more == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Trigger next batch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEXT_START=${{ needs.prepare-versions.outputs.next_start_index }}
+          TOTAL=${{ needs.prepare-versions.outputs.total_count }}
+          echo "➡️  当前批次已处理至索引 ${NEXT_START}，总计 ${TOTAL} 个版本。触发下一批次..."
+          gh workflow run "${{ github.workflow }}" \
+            --ref "${{ github.ref_name }}" \
+            -f mode=${{ needs.prepare-versions.outputs.mode }} \
+            -f target_version= \
+            -f start_index=${{ needs.prepare-versions.outputs.next_start_index }}
