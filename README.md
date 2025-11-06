@@ -19,3 +19,6 @@
   - 搭配 https://github.com/zhaochengcube/augment-token-mng 项目实现一键换号、更新余额监控token
 
 来源与发布：https://github.com/llpplplp/AugmentInjector
+
+
+有人反馈不显示历史记录，可以尝试换版本解决
