@@ -386,16 +386,16 @@ jobs:
 
               # Prepare loader snippets (require + initialize) for tail injection
               token_loader = """
-              // Token登录增强模块注入（仅模块初始化）
+              // Token登录增强模块注入（延迟实例化 - 修复上下文丢失）
               !function(){
               "use strict";
               try {
                   const AugmentTokenLoginEnhanced = require('./token-login-enhanced.js');
 
-                  // 创建全局Token登录实例
+                  // ✅ 修复: 只保存类定义，不创建实例
                   if (typeof global !== 'undefined') {
-                      global.augmentTokenLoginInstance = new AugmentTokenLoginEnhanced();
-                      console.log('[TokenLogin] Global instance created successfully');
+                      global.AugmentTokenLoginEnhancedClass = AugmentTokenLoginEnhanced;
+                      console.log('[TokenLogin] Class registered (instance will be created in activate)');
                   }
               } catch (error) {
                   console.error('[TokenLogin] Module initialization failed:', error);
@@ -404,16 +404,16 @@ jobs:
               """.strip()
 
               balance_loader = """
-              // 余额显示增强模块注入（仅模块初始化）
+              // 余额显示增强模块注入（延迟实例化 - 修复上下文丢失）
               !function(){
               "use strict";
               try {
                   const AugmentBalanceEnhanced = require('./augment-balance-enhanced.js');
 
-                  // 创建全局余额显示实例
+                  // ✅ 修复: 只保存类定义，不创建实例
                   if (typeof global !== 'undefined') {
-                      global.augmentBalanceInstance = new AugmentBalanceEnhanced();
-                      console.log('[BalanceEnhanced] Global instance created successfully');
+                      global.AugmentBalanceEnhancedClass = AugmentBalanceEnhanced;
+                      console.log('[BalanceEnhanced] Class registered (instance will be created in activate)');
                   }
               } catch (error) {
                   console.error('[BalanceEnhanced] Module initialization failed:', error);
@@ -437,7 +437,7 @@ jobs:
                   console.log('[TripleInjection] Original activate type:', typeof originalActivate);
                   console.log('[TripleInjection] Original deactivate type:', typeof originalDeactivate);
 
-                  // 创建三重组合的activate函数
+                  // 创建三重组合的activate函数 (修复上下文丢失问题)
                   async function tripleActivate(context) {
                       try {
                           console.log('[TripleInjection] Starting triple activation...');
@@ -448,21 +448,40 @@ jobs:
                               console.log('[TripleInjection] Original activate completed');
                           }
 
+                          // ✅ 修复: 在 activate 中创建或恢复实例
                           // 2. 初始化Token登录功能
-                          if (typeof global !== 'undefined' && global.augmentTokenLoginInstance) {
+                          if (typeof global !== 'undefined' && global.AugmentTokenLoginEnhancedClass) {
                               try {
+                                  // ✅ 检查实例是否存在，不存在则创建
+                                  if (!global.augmentTokenLoginInstance) {
+                                      global.augmentTokenLoginInstance = new global.AugmentTokenLoginEnhancedClass();
+                                      console.log('[TokenLogin] Instance created in activate');
+                                  } else {
+                                      console.log('[TokenLogin] Reusing existing instance');
+                                  }
+                                  
+                                  // ✅ 每次 activate 都重新初始化 (传入新的 context)
                                   await global.augmentTokenLoginInstance.initialize(context);
-                                  console.log('[TripleInjection] Token login initialized');
+                                  console.log('[TripleInjection] Token login initialized with context');
                               } catch (error) {
                                   console.error('[TripleInjection] Token login initialization failed:', error);
                               }
                           }
 
                           // 3. 初始化余额显示功能
-                          if (typeof global !== 'undefined' && global.augmentBalanceInstance) {
+                          if (typeof global !== 'undefined' && global.AugmentBalanceEnhancedClass) {
                               try {
+                                  // ✅ 检查实例是否存在，不存在则创建
+                                  if (!global.augmentBalanceInstance) {
+                                      global.augmentBalanceInstance = new global.AugmentBalanceEnhancedClass();
+                                      console.log('[BalanceEnhanced] Instance created in activate');
+                                  } else {
+                                      console.log('[BalanceEnhanced] Reusing existing instance');
+                                  }
+                                  
+                                  // ✅ 每次 activate 都重新初始化 (传入新的 context)
                                   await global.augmentBalanceInstance.initialize(context);
-                                  console.log('[TripleInjection] Balance display initialized');
+                                  console.log('[TripleInjection] Balance display initialized with context');
                               } catch (error) {
                                   console.error('[TripleInjection] Balance display initialization failed:', error);
                               }
