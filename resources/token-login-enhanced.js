@@ -1,1 +1,723 @@
-const a0_0x329ba9=a0_0x253e;function a0_0x253e(_0x479e59,_0x59fb08){const _0x29aae1=a0_0x29aa();return a0_0x253e=function(_0x253ed1,_0xef3d2b){_0x253ed1=_0x253ed1-0x13e;let _0x2f6bc0=_0x29aae1[_0x253ed1];if(a0_0x253e['lJwFSD']===undefined){var _0x176a1b=function(_0x2db7f9){const _0x4ad004='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x2d0edc='',_0x247c47='';for(let _0x38031d=0x0,_0x1b0c7e,_0x411f58,_0x529747=0x0;_0x411f58=_0x2db7f9['charAt'](_0x529747++);~_0x411f58&&(_0x1b0c7e=_0x38031d%0x4?_0x1b0c7e*0x40+_0x411f58:_0x411f58,_0x38031d++%0x4)?_0x2d0edc+=String['fromCharCode'](0xff&_0x1b0c7e>>(-0x2*_0x38031d&0x6)):0x0){_0x411f58=_0x4ad004['indexOf'](_0x411f58);}for(let _0x4469f8=0x0,_0x609f9a=_0x2d0edc['length'];_0x4469f8<_0x609f9a;_0x4469f8++){_0x247c47+='%'+('00'+_0x2d0edc['charCodeAt'](_0x4469f8)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x247c47);};a0_0x253e['MarwyP']=_0x176a1b,_0x479e59=arguments,a0_0x253e['lJwFSD']=!![];}const _0x140b89=_0x29aae1[0x0],_0x2be8ff=_0x253ed1+_0x140b89,_0xa462f9=_0x479e59[_0x2be8ff];return!_0xa462f9?(_0x2f6bc0=a0_0x253e['MarwyP'](_0x2f6bc0),_0x479e59[_0x2be8ff]=_0x2f6bc0):_0x2f6bc0=_0xa462f9,_0x2f6bc0;},a0_0x253e(_0x479e59,_0x59fb08);}(function(_0x1ce982,_0x5219a7){const _0x2a36e7=a0_0x253e,_0x4e1729=_0x1ce982();while(!![]){try{const _0x477fb9=parseInt(_0x2a36e7(0x168))/0x1+parseInt(_0x2a36e7(0x17c))/0x2+-parseInt(_0x2a36e7(0x17a))/0x3+-parseInt(_0x2a36e7(0x1cc))/0x4+-parseInt(_0x2a36e7(0x18c))/0x5+parseInt(_0x2a36e7(0x149))/0x6*(-parseInt(_0x2a36e7(0x1a8))/0x7)+parseInt(_0x2a36e7(0x1a6))/0x8;if(_0x477fb9===_0x5219a7)break;else _0x4e1729['push'](_0x4e1729['shift']());}catch(_0x5891ca){_0x4e1729['push'](_0x4e1729['shift']());}}}(a0_0x29aa,0xbe44d));const vscode=require(a0_0x329ba9(0x16a));class AugmentTokenLoginEnhanced{constructor(){const _0xd3ffe=a0_0x329ba9;this[_0xd3ffe(0x1d6)]=null,this[_0xd3ffe(0x190)]=this[_0xd3ffe(0x160)](),this['isInitialized']=![];}[a0_0x329ba9(0x160)](){const _0x495ce7=a0_0x329ba9;return{'info':(_0x2db7f9,..._0x4ad004)=>console['log']('[TokenLogin]\x20'+_0x2db7f9,..._0x4ad004),'warn':(_0x2d0edc,..._0x247c47)=>console['warn'](_0x495ce7(0x193)+_0x2d0edc,..._0x247c47),'error':(_0x38031d,..._0x1b0c7e)=>console[_0x495ce7(0x15e)]('[TokenLogin]\x20'+_0x38031d,..._0x1b0c7e),'debug':(_0x411f58,..._0x529747)=>console[_0x495ce7(0x153)](_0x495ce7(0x193)+_0x411f58,..._0x529747)};}[a0_0x329ba9(0x166)](){const _0x25a752=a0_0x329ba9;try{const _0x4469f8=vscode[_0x25a752(0x180)][_0x25a752(0x1cd)]({'handleUri':async _0x609f9a=>{const _0x178352=_0x25a752;try{const _0x3c9e95=new URLSearchParams(_0x609f9a&&_0x609f9a[_0x178352(0x1b4)]||''),_0x2696f7=_0x3c9e95['get']('url')||_0x3c9e95['get']('tenantURL')||'',_0x29da21=_0x3c9e95[_0x178352(0x169)]('token')||_0x3c9e95['get']('accessToken')||'',_0x5dbafb=_0x3c9e95['get']('portal');if(_0x5dbafb!==null){const _0xda0492=(_0x5dbafb||'')[_0x178352(0x1c7)]();if(_0xda0492[_0x178352(0x151)]===0x0)vscode[_0x178352(0x180)][_0x178352(0x1d0)]('portal 参数为空\uFF0C已忽略余额 token 更新');else{let _0x42ee15=_0xda0492;try{const _0x593437=_0xda0492[_0x178352(0x19a)](/[?&]token=([^&]+)/);if(_0x593437)_0x42ee15=decodeURIComponent(_0x593437[0x1]);}catch(_0x1b4127){}try{await vscode['workspace'][_0x178352(0x17d)](_0x178352(0x18f))['update']('token',_0x42ee15,vscode['ConfigurationTarget'][_0x178352(0x195)]),this['logger'][_0x178352(0x181)]('augmentBalance.token 已通过 portal 更新');}catch(_0x41bb0d){this['logger'][_0x178352(0x1aa)]('更新 augmentBalance.token 失败:',_0x41bb0d);}}}const _0x2860a4=this['validateURL'](_0x2696f7),_0x562106=this['validateToken'](_0x29da21);if(!_0x2860a4[_0x178352(0x17f)]||!_0x562106['valid']){vscode[_0x178352(0x180)]['showErrorMessage']('推送登录参数无效');return;}const _0x17bdf5=await this[_0x178352(0x14f)](_0x2860a4[_0x178352(0x1d9)],_0x562106[_0x178352(0x197)]);if(_0x17bdf5&&_0x17bdf5[_0x178352(0x1ac)]){typeof this[_0x178352(0x15f)]===_0x178352(0x1d2)&&await this[_0x178352(0x15f)]();const _0x1d4eab=await vscode[_0x178352(0x180)][_0x178352(0x19f)]('登录成功\uFF0C是否重载窗口以生效\uFF1F',_0x178352(0x1d8),'稍后');_0x1d4eab==='重载窗口'&&vscode['commands']['executeCommand']('workbench.action.reloadWindow');}else vscode['window'][_0x178352(0x150)]('推送登录失败\uFF1A'+(_0x17bdf5&&_0x17bdf5[_0x178352(0x15e)]||_0x178352(0x1ae)));}catch(_0x4e4d49){this[_0x178352(0x190)]&&typeof this[_0x178352(0x190)][_0x178352(0x15e)]===_0x178352(0x1d2)&&this[_0x178352(0x190)]['error']('Push\x20login\x20handle\x20failed:',_0x4e4d49),vscode[_0x178352(0x180)][_0x178352(0x150)]('推送登录异常\uFF1A'+(_0x4e4d49&&_0x4e4d49[_0x178352(0x184)]?_0x4e4d49[_0x178352(0x184)]:String(_0x4e4d49)));}}});this[_0x25a752(0x1d6)]&&this[_0x25a752(0x1d6)][_0x25a752(0x1b0)]&&_0x4469f8&&this[_0x25a752(0x1d6)][_0x25a752(0x1b0)][_0x25a752(0x1cf)](_0x4469f8),this[_0x25a752(0x190)]&&typeof this[_0x25a752(0x190)]['info']===_0x25a752(0x1d2)&&this['logger'][_0x25a752(0x181)]('URI handler registered for autoAuth/push-login');}catch(_0x4215fd){this[_0x25a752(0x190)]&&typeof this[_0x25a752(0x190)][_0x25a752(0x1aa)]==='function'&&this[_0x25a752(0x190)]['warn'](_0x25a752(0x164),_0x4215fd);try{const _0x137506=typeof globalThis!==_0x25a752(0x17e)?globalThis:typeof global!==_0x25a752(0x17e)?global:{};if(_0x137506&&_0x137506[_0x25a752(0x189)]&&typeof _0x137506[_0x25a752(0x189)][_0x25a752(0x1a1)]==='function'){const _0x5b2a09=async _0x5f3baf=>{const _0x46e702=_0x25a752;try{const _0x50d6ec=new URLSearchParams(_0x5f3baf&&_0x5f3baf[_0x46e702(0x1b4)]||''),_0x4e80ef=_0x50d6ec['get']('url')||_0x50d6ec[_0x46e702(0x169)]('tenantURL')||'',_0x40a7f5=_0x50d6ec[_0x46e702(0x169)]('token')||_0x50d6ec[_0x46e702(0x169)]('accessToken')||'',_0x41842e=_0x50d6ec[_0x46e702(0x169)]('portal');if(_0x41842e!==null){const _0x4fb7aa=(_0x41842e||'')['trim']();if(_0x4fb7aa['length']===0x0)vscode[_0x46e702(0x180)]['showWarningMessage']('portal 参数为空\uFF0C已忽略余额 token 更新');else{let _0x57a128=_0x4fb7aa;try{const _0x2533fc=_0x4fb7aa[_0x46e702(0x19a)](/[?&]token=([^&]+)/);if(_0x2533fc)_0x57a128=decodeURIComponent(_0x2533fc[0x1]);}catch(_0x5335cb){}try{await vscode[_0x46e702(0x16e)][_0x46e702(0x17d)](_0x46e702(0x18f))['update']('token',_0x57a128,vscode['ConfigurationTarget']['Global']),this['logger'][_0x46e702(0x181)]('augmentBalance.token 已通过 portal 更新\uFF08fallback\uFF09');}catch(_0x1920e3){this[_0x46e702(0x190)]['warn']('更新 augmentBalance.token 失败\uFF08fallback\uFF09:',_0x1920e3);}}}const _0x4d924a=this[_0x46e702(0x1b6)](_0x4e80ef),_0x34778e=this[_0x46e702(0x14c)](_0x40a7f5);if(!_0x4d924a['valid']||!_0x34778e[_0x46e702(0x17f)]){vscode[_0x46e702(0x180)][_0x46e702(0x150)]('推送登录参数无效');return;}const _0x13bde1=await this[_0x46e702(0x14f)](_0x4d924a[_0x46e702(0x1d9)],_0x34778e[_0x46e702(0x197)]);if(_0x13bde1&&_0x13bde1['success']){typeof this['triggerSessionChange']===_0x46e702(0x1d2)&&await this[_0x46e702(0x15f)]();const _0x5d56e2=await vscode['window']['showInformationMessage']('登录成功\uFF0C是否重载窗口以生效\uFF1F',_0x46e702(0x1d8),'稍后');_0x5d56e2==='重载窗口'&&vscode[_0x46e702(0x1c2)][_0x46e702(0x1a9)]('workbench.action.reloadWindow');}else vscode['window'][_0x46e702(0x150)]('推送登录失败\uFF1A'+(_0x13bde1&&_0x13bde1[_0x46e702(0x15e)]||'未知原因'));}catch(_0x5d5931){this['logger']&&typeof this[_0x46e702(0x190)][_0x46e702(0x15e)]===_0x46e702(0x1d2)&&this[_0x46e702(0x190)]['error'](_0x46e702(0x145),_0x5d5931),vscode[_0x46e702(0x180)]['showErrorMessage']('推送登录异常\uFF08fallback\uFF09\uFF1A'+(_0x5d5931&&_0x5d5931[_0x46e702(0x184)]?_0x5d5931[_0x46e702(0x184)]:String(_0x5d5931)));}};_0x137506[_0x25a752(0x189)]['setUriHandler'](_0x5b2a09),this[_0x25a752(0x190)]&&typeof this[_0x25a752(0x190)][_0x25a752(0x181)]===_0x25a752(0x1d2)&&this[_0x25a752(0x190)][_0x25a752(0x181)](_0x25a752(0x15b));}}catch(_0x4be497){}}}async[a0_0x329ba9(0x1a7)](_0x1827f9){const _0x10333a=a0_0x329ba9;if(this[_0x10333a(0x175)]){this['logger']['warn'](_0x10333a(0x1bf));return;}try{this[_0x10333a(0x1d6)]=_0x1827f9,this[_0x10333a(0x146)](),this[_0x10333a(0x1a0)]();try{typeof this[_0x10333a(0x166)]==='function'&&this['registerDeepLinkHandler']();}catch(_0x10e6c6){this['logger']&&typeof this[_0x10333a(0x190)]['warn']===_0x10333a(0x1d2)&&this[_0x10333a(0x190)]['warn'](_0x10333a(0x19b),_0x10e6c6);}this[_0x10333a(0x175)]=!![],this[_0x10333a(0x190)][_0x10333a(0x181)]('Enhanced\x20module\x20initialized\x20successfully');}catch(_0x36a38a){this['logger'][_0x10333a(0x15e)](_0x10333a(0x155),_0x36a38a);throw _0x36a38a;}}[a0_0x329ba9(0x146)](){const _0x6fdcf6=a0_0x329ba9;try{const _0x53ba34=vscode[_0x6fdcf6(0x1c2)]['registerCommand']('augment.custom.tokenManagement',()=>{const _0x18c24a=_0x6fdcf6;this[_0x18c24a(0x14d)]();}),_0x1ce851=vscode[_0x6fdcf6(0x1c2)][_0x6fdcf6(0x1b5)]('augment.custom.directLogin',()=>{this['handleDirectLogin']();});this[_0x6fdcf6(0x1d6)][_0x6fdcf6(0x1b0)][_0x6fdcf6(0x1cf)](_0x53ba34),this[_0x6fdcf6(0x1d6)][_0x6fdcf6(0x1b0)]['push'](_0x1ce851),this['logger']['info'](_0x6fdcf6(0x182));}catch(_0x40dfe9){this['logger'][_0x6fdcf6(0x15e)](_0x6fdcf6(0x177),_0x40dfe9);}}async[a0_0x329ba9(0x187)](){const _0x563ce8=a0_0x329ba9;try{const _0x48d0bc=await this[_0x563ce8(0x1d6)][_0x563ce8(0x16f)][_0x563ce8(0x169)]('augment.sessions');if(_0x48d0bc){const _0x29788f=JSON[_0x563ce8(0x1d1)](_0x48d0bc);return{'success':!![],'accessToken':_0x29788f[_0x563ce8(0x186)],'tenantURL':_0x29788f['tenantURL'],'data':_0x29788f};}return{'success':![],'error':_0x563ce8(0x1b9)};}catch(_0x3f7e3d){return{'success':![],'error':_0x3f7e3d[_0x563ce8(0x184)]};}}async[a0_0x329ba9(0x178)](_0x2d0fad,_0x24127f){const _0xbb5bf3=a0_0x329ba9;try{const _0x937d3c=typeof _0x24127f===_0xbb5bf3(0x18a)?_0x24127f:JSON[_0xbb5bf3(0x165)](_0x24127f);return await this['context']['secrets'][_0xbb5bf3(0x157)](_0x2d0fad,_0x937d3c),this[_0xbb5bf3(0x190)][_0xbb5bf3(0x181)](_0xbb5bf3(0x13e)+_0x2d0fad+_0xbb5bf3(0x13f)),!![];}catch(_0xbb12dc){return this[_0xbb5bf3(0x190)][_0xbb5bf3(0x15e)]('Failed\x20to\x20store\x20secret\x20'+_0x2d0fad+':',_0xbb12dc),![];}}async[a0_0x329ba9(0x1d5)](_0x39dd34){const _0x13c46b=a0_0x329ba9;try{const _0x5b0457=await this['context']['secrets'][_0x13c46b(0x169)]('augment.sessions');let _0x3a434b={};if(_0x5b0457)try{_0x3a434b=JSON[_0x13c46b(0x1d1)](_0x5b0457);}catch(_0x54f925){this[_0x13c46b(0x190)][_0x13c46b(0x1aa)](_0x13c46b(0x15c)),_0x3a434b={};}_0x3a434b[_0x13c46b(0x186)]=_0x39dd34;!_0x3a434b[_0x13c46b(0x1b3)]&&(_0x3a434b['tenantURL']='https://d5.api.augmentcode.com/');!_0x3a434b[_0x13c46b(0x1b8)]&&(_0x3a434b['scopes']=['email']);const _0x192ff0=await this[_0x13c46b(0x178)]('augment.sessions',_0x3a434b);return _0x192ff0?(this[_0x13c46b(0x190)][_0x13c46b(0x181)]('AccessToken\x20updated\x20successfully'),await this[_0x13c46b(0x15a)](),{'success':!![],'data':_0x3a434b}):{'success':![],'error':'存储更新后的会话数据失败'};}catch(_0x59f886){return this['logger'][_0x13c46b(0x15e)]('Failed to update access token:',_0x59f886),{'success':![],'error':_0x59f886[_0x13c46b(0x184)]};}}async[a0_0x329ba9(0x14f)](_0x40eace,_0x40b313){const _0x376c24=a0_0x329ba9;try{const _0xa6c4d2=await this[_0x376c24(0x1d6)][_0x376c24(0x16f)][_0x376c24(0x169)]('augment.sessions');let _0x4e44c0={};if(_0xa6c4d2)try{_0x4e44c0=JSON[_0x376c24(0x1d1)](_0xa6c4d2);}catch(_0x30436a){this['logger']['warn'](_0x376c24(0x15c)),_0x4e44c0={};}_0x4e44c0[_0x376c24(0x1b3)]=_0x40eace,_0x4e44c0[_0x376c24(0x186)]=_0x40b313;!_0x4e44c0[_0x376c24(0x1b8)]&&(_0x4e44c0['scopes']=['email']);const _0x1ec15c=await this[_0x376c24(0x178)]('augment.sessions',_0x4e44c0);return _0x1ec15c?(this[_0x376c24(0x190)]['info'](_0x376c24(0x1cb)),await this[_0x376c24(0x15a)](),{'success':!![],'data':_0x4e44c0}):{'success':![],'error':_0x376c24(0x1b2)};}catch(_0x3f7e78){return this[_0x376c24(0x190)][_0x376c24(0x15e)](_0x376c24(0x1c9),_0x3f7e78),{'success':![],'error':_0x3f7e78[_0x376c24(0x184)]};}}[a0_0x329ba9(0x172)](_0x2555c4){const _0x16d3b=a0_0x329ba9;if(!_0x2555c4)return'';return!_0x2555c4[_0x16d3b(0x1bc)](_0x16d3b(0x191))&&!_0x2555c4[_0x16d3b(0x1bc)](_0x16d3b(0x18e))&&(_0x2555c4='https://'+_0x2555c4),!_0x2555c4['endsWith']('/')&&(_0x2555c4+='/'),_0x2555c4;}[a0_0x329ba9(0x14c)](_0x45522a){const _0x77e948=a0_0x329ba9;if(!_0x45522a||typeof _0x45522a!==_0x77e948(0x18a))return{'valid':![],'error':'Token不能为空'};const _0xaf0a31=_0x45522a[_0x77e948(0x1c7)]();if(_0xaf0a31[_0x77e948(0x151)]<0xa)return{'valid':![],'error':'Token长度似乎太短'};return{'valid':!![],'token':_0xaf0a31};}[a0_0x329ba9(0x1b6)](_0xa4f241){const _0xc48aa4=a0_0x329ba9;if(!_0xa4f241||typeof _0xa4f241!=='string')return{'valid':![],'error':'URL不能为空'};try{const _0x26d051=this['formatURL'](_0xa4f241['trim']());return new URL(_0x26d051),{'valid':!![],'url':_0x26d051};}catch{return{'valid':![],'error':_0xc48aa4(0x1c4)};}}[a0_0x329ba9(0x18b)](){const _0x1ba41c=a0_0x329ba9,_0x2578c8='0123456789abcdef';let _0x4bb83e='';for(let _0x491a5b=0x0;_0x491a5b<0x24;_0x491a5b++){_0x4bb83e+=_0x491a5b===0x8||_0x491a5b===0xd||_0x491a5b===0x12||_0x491a5b===0x17?'-':_0x491a5b===0xe?'4':_0x491a5b===0x13?_0x2578c8[0x8+Math['floor'](0x4*Math[_0x1ba41c(0x147)]())]:_0x2578c8[Math[_0x1ba41c(0x171)](0x10*Math['random']())];}return _0x4bb83e;}async[a0_0x329ba9(0x15a)](){const _0x3ba15e=a0_0x329ba9;try{const _0x44bbdf=this['generateNewSessionId']();if(typeof global!=='undefined'&&global[_0x3ba15e(0x1b1)]){if(typeof global['AugmentInterceptor'][_0x3ba15e(0x1d4)]===_0x3ba15e(0x1d2)){const _0x5cf3b0=global[_0x3ba15e(0x1b1)]['updateFakeSessionId'](_0x44bbdf);_0x5cf3b0&&this[_0x3ba15e(0x190)][_0x3ba15e(0x181)](_0x3ba15e(0x1ba)+_0x44bbdf);}else global[_0x3ba15e(0x1b1)]['FAKE_SESSION_ID']=_0x44bbdf,this['logger'][_0x3ba15e(0x181)](_0x3ba15e(0x141)+_0x44bbdf);}return typeof window!=='undefined'&&window['AugmentInterceptor']&&(typeof window[_0x3ba15e(0x1b1)][_0x3ba15e(0x1d4)]===_0x3ba15e(0x1d2)?window['AugmentInterceptor'][_0x3ba15e(0x1d4)](_0x44bbdf):window['AugmentInterceptor'][_0x3ba15e(0x154)]=_0x44bbdf),_0x44bbdf;}catch(_0x2510bf){return this['logger']['error']('Failed\x20to\x20update\x20interceptor\x20SessionId:',_0x2510bf),null;}}async['triggerSessionChange'](){const _0x305b13=a0_0x329ba9;try{const _0x4e03ac=await this[_0x305b13(0x15a)]();_0x4e03ac&&this[_0x305b13(0x190)]['info']('Session\x20change\x20triggered\x20with\x20new\x20SessionId:\x20'+_0x4e03ac),vscode['authentication']&&typeof vscode[_0x305b13(0x15d)]['onDidChangeSessions']===_0x305b13(0x1d2)&&vscode['authentication'][_0x305b13(0x158)](()=>{const _0x1f0327=_0x305b13;this['logger'][_0x1f0327(0x181)](_0x1f0327(0x16d));});}catch(_0x4b59a0){this[_0x305b13(0x190)]['debug'](_0x305b13(0x1bd),_0x4b59a0);}}async[a0_0x329ba9(0x14d)](){const _0x41c5d2=a0_0x329ba9;try{const _0x3c0537=await vscode[_0x41c5d2(0x180)][_0x41c5d2(0x18d)]([{'label':'\uD83D\uDD11 直接登录','description':'使用租户URL和Token直接登录','detail':'输入租户URL和访问令牌进行快速登录'},{'label':'\uD83D\uDCCB 获取 accessToken','description':'查看当前的 accessToken 和 tenantURL','detail':'显示当前存储的认证信息，支持复制和查看完整数据'},{'label':'\u2699️ 设置 accessToken','description':'修改 accessToken 或 tenantURL','detail':'更新认证信息\uFF0C支持仅更新 accessToken 或完整更新会话数据'}],{'placeHolder':'选择要执行的操作'});if(!_0x3c0537)return;if(_0x3c0537['label']==='\uD83D\uDD11 直接登录')await this[_0x41c5d2(0x176)]();else{if(_0x3c0537[_0x41c5d2(0x1c8)]==='\uD83D\uDCCB 获取 accessToken')await this[_0x41c5d2(0x1c3)]();else _0x3c0537[_0x41c5d2(0x1c8)]==='\u2699️ 设置 accessToken'&&await this[_0x41c5d2(0x1d3)]();}}catch(_0x9761b7){vscode['window'][_0x41c5d2(0x150)](_0x41c5d2(0x1d7)+_0x9761b7['message']);}}async['handleDirectLogin'](){const _0x5356b4=a0_0x329ba9;try{const _0x1617e0=vscode[_0x5356b4(0x180)][_0x5356b4(0x152)]('augmentLogin','Augment 登录',vscode[_0x5356b4(0x144)][_0x5356b4(0x1ce)],{'enableScripts':!![],'retainContextWhenHidden':!![]});_0x1617e0[_0x5356b4(0x1b7)]['html']=this['getLoginWebviewContent'](),_0x1617e0[_0x5356b4(0x1b7)]['onDidReceiveMessage'](async _0x1e95fe=>{const _0xaa3070=_0x5356b4;switch(_0x1e95fe[_0xaa3070(0x14a)]){case _0xaa3070(0x170):await this[_0xaa3070(0x196)](_0x1e95fe[_0xaa3070(0x1bb)],_0x1617e0);break;case'cancel':_0x1617e0[_0xaa3070(0x194)]();break;}},undefined,this['context']['subscriptions']);}catch(_0x3598d6){this['logger'][_0x5356b4(0x15e)](_0x5356b4(0x173),_0x3598d6),vscode[_0x5356b4(0x180)][_0x5356b4(0x150)](_0x5356b4(0x183)+_0x3598d6[_0x5356b4(0x184)]);}}async[a0_0x329ba9(0x196)](_0x152ecc,_0x2dbcc2){const _0x4b3f3b=a0_0x329ba9;try{const {tenantURL:_0xed3981,accessToken:_0x5e9b80}=_0x152ecc,_0x433cd9=this[_0x4b3f3b(0x1b6)](_0xed3981),_0x3a8878=this[_0x4b3f3b(0x14c)](_0x5e9b80);if(!_0x433cd9[_0x4b3f3b(0x17f)]){_0x2dbcc2['webview']['postMessage']({'command':_0x4b3f3b(0x15e),'field':'tenantURL','message':_0x433cd9['error']});return;}if(!_0x3a8878[_0x4b3f3b(0x17f)]){_0x2dbcc2[_0x4b3f3b(0x1b7)][_0x4b3f3b(0x16c)]({'command':'error','field':'accessToken','message':_0x3a8878[_0x4b3f3b(0x15e)]});return;}_0x2dbcc2['webview']['postMessage']({'command':_0x4b3f3b(0x1c6),'message':'正在验证登录信息...'});const _0x2edd0f=await this[_0x4b3f3b(0x14f)](_0x433cd9[_0x4b3f3b(0x1d9)],_0x3a8878['token']);_0x2edd0f[_0x4b3f3b(0x1ac)]?(await this[_0x4b3f3b(0x15f)](),_0x2dbcc2[_0x4b3f3b(0x1b7)][_0x4b3f3b(0x16c)]({'command':_0x4b3f3b(0x1ac),'message':'登录成功\uFF01'}),setTimeout(async()=>{const _0x4e35f4=_0x4b3f3b;_0x2dbcc2[_0x4e35f4(0x194)]();const _0x71fe20=await vscode[_0x4e35f4(0x180)][_0x4e35f4(0x19f)]('登录成功\uFF01建议重载窗口以使更改生效\u3002',_0x4e35f4(0x1d8),_0x4e35f4(0x19e));_0x71fe20===_0x4e35f4(0x1d8)&&vscode[_0x4e35f4(0x1c2)][_0x4e35f4(0x1a9)]('workbench.action.reloadWindow');},0x5dc)):_0x2dbcc2['webview'][_0x4b3f3b(0x16c)]({'command':_0x4b3f3b(0x15e),'field':_0x4b3f3b(0x1c5),'message':_0x4b3f3b(0x14b)+_0x2edd0f[_0x4b3f3b(0x15e)]});}catch(_0xf5e3c7){this['logger']['error']('Webview\x20login\x20failed:',_0xf5e3c7),_0x2dbcc2[_0x4b3f3b(0x1b7)][_0x4b3f3b(0x16c)]({'command':_0x4b3f3b(0x15e),'field':_0x4b3f3b(0x1c5),'message':_0x4b3f3b(0x14b)+_0xf5e3c7['message']});}}[a0_0x329ba9(0x14e)](){return'<!DOCTYPE\x20html>\x0a<html\x20lang=\x22zh-CN\x22>\x0a<head>\x0a\x20\x20\x20\x20<meta\x20charset=\x22UTF-8\x22>\x0a\x20\x20\x20\x20<meta\x20name=\x22viewport\x22\x20content=\x22width=device-width,\x20initial-scale=1.0\x22>\x0a\x20\x20\x20\x20<title>Augment\x20登录</title>\x0a\x20\x20\x20\x20<style>\x0a\x20\x20\x20\x20\x20\x20\x20\x20*\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-sizing:\x20border-box;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20-apple-system,\x20BlinkMacSystemFont,\x20\x27Segoe\x20UI\x27,\x20Roboto,\x20sans-serif;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20linear-gradient(135deg,\x20#667eea\x200%,\x20#764ba2\x20100%);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20min-height:\x20100vh;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.login-container\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20rgba(255,\x20255,\x20255,\x200.95);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20backdrop-filter:\x20blur(10px);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2040px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x2020px\x2040px\x20rgba(0,\x200,\x200,\x200.1);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x20450px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20animation:\x20slideIn\x200.5s\x20ease-out;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20@keyframes\x20slideIn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20from\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20opacity:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translateY(30px);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20to\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20opacity:\x201;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translateY(0);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.login-header\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2030px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.login-title\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2028px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20700;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#333;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.login-subtitle\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#666;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2014px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.form-group\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.form-label\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20600;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#333;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2014px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.form-input\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2012px\x2016px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x202px\x20solid\x20#e1e5e9;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2014px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20all\x200.3s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.form-input:focus\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20outline:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-color:\x20#667eea;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x200\x200\x203px\x20rgba(102,\x20126,\x20234,\x200.1);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.form-input.error\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-color:\x20#e74c3c;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x200\x200\x203px\x20rgba(231,\x2076,\x2060,\x200.1);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.error-message\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#e74c3c;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.error-message.show\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.button-group\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20gap:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2030px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20flex:\x201;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2012px\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2014px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20600;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20all\x200.3s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20relative;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20overflow:\x20hidden;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn-primary\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20linear-gradient(135deg,\x20#667eea\x200%,\x20#764ba2\x20100%);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn-primary:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translateY(-2px);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x2010px\x2020px\x20rgba(102,\x20126,\x20234,\x200.3);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn-secondary\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#f8f9fa;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#666;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x202px\x20solid\x20#e1e5e9;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn-secondary:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#e9ecef;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.btn:disabled\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20opacity:\x200.6;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20not-allowed;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20none\x20!important;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.loading-spinner\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x202px\x20solid\x20transparent;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-top:\x202px\x20solid\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2050%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20animation:\x20spin\x201s\x20linear\x20infinite;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-right:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20@keyframes\x20spin\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x200%\x20{\x20transform:\x20rotate(0deg);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20100%\x20{\x20transform:\x20rotate(360deg);\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.success-message\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#d4edda;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#155724;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20500;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.success-message.show\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.general-error\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#f8d7da;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#721c24;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20500;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.general-error.show\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.form-help\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#666;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20</style>\x0a</head>\x0a<body>\x0a\x20\x20\x20\x20<div\x20class=\x22login-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22login-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22login-title\x22>🔑\x20Augment\x20登录</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22login-subtitle\x22>输入您的租户URL和访问令牌</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22success-message\x22\x20id=\x22successMessage\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22general-error\x22\x20id=\x22generalError\x22></div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<form\x20id=\x22loginForm\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22form-label\x22\x20for=\x22tenantURL\x22>租户URL</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20type=\x22url\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20id=\x22tenantURL\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22form-input\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20placeholder=\x22https://your-tenant.augmentcode.com/\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20required\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22error-message\x22\x20id=\x22tenantURLError\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-help\x22>请输入您的Augment租户URL地址</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22form-label\x22\x20for=\x22accessToken\x22>访问令牌</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20type=\x22password\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20id=\x22accessToken\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22form-input\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20placeholder=\x22输入您的访问令牌...\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20required\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22error-message\x22\x20id=\x22accessTokenError\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-help\x22>请输入您的Augment访问令牌</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22button-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22button\x22\x20class=\x22btn\x20btn-secondary\x22\x20id=\x22cancelBtn\x22>取消</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20type=\x22submit\x22\x20class=\x22btn\x20btn-primary\x22\x20id=\x22loginBtn\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22loading-spinner\x22\x20id=\x22loadingSpinner\x22></span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20id=\x22loginBtnText\x22>登录</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</form>\x0a\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20<script>\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20vscode\x20=\x20acquireVsCodeApi();\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20form\x20=\x20document.getElementById(\x27loginForm\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20tenantURLInput\x20=\x20document.getElementById(\x27tenantURL\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20accessTokenInput\x20=\x20document.getElementById(\x27accessToken\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20loginBtn\x20=\x20document.getElementById(\x27loginBtn\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20cancelBtn\x20=\x20document.getElementById(\x27cancelBtn\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20loadingSpinner\x20=\x20document.getElementById(\x27loadingSpinner\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20loginBtnText\x20=\x20document.getElementById(\x27loginBtnText\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20successMessage\x20=\x20document.getElementById(\x27successMessage\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20generalError\x20=\x20document.getElementById(\x27generalError\x27);\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//\x20清除错误状态\x0a\x20\x20\x20\x20\x20\x20\x20\x20function\x20clearErrors()\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20document.querySelectorAll(\x27.form-input\x27).forEach(input\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20input.classList.remove(\x27error\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20});\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20document.querySelectorAll(\x27.error-message\x27).forEach(msg\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20msg.classList.remove(\x27show\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20});\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20generalError.classList.remove(\x27show\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//\x20显示错误\x0a\x20\x20\x20\x20\x20\x20\x20\x20function\x20showError(field,\x20message)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(field\x20===\x20\x27general\x27)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20generalError.textContent\x20=\x20message;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20generalError.classList.add(\x27show\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x20else\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20const\x20input\x20=\x20document.getElementById(field);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20const\x20errorMsg\x20=\x20document.getElementById(field\x20+\x20\x27Error\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(input\x20&&\x20errorMsg)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20input.classList.add(\x27error\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20errorMsg.textContent\x20=\x20message;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20errorMsg.classList.add(\x27show\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//\x20设置加载状态\x0a\x20\x20\x20\x20\x20\x20\x20\x20function\x20setLoading(loading,\x20message\x20=\x20\x27\x27)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loginBtn.disabled\x20=\x20loading;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cancelBtn.disabled\x20=\x20loading;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20tenantURLInput.disabled\x20=\x20loading;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20accessTokenInput.disabled\x20=\x20loading;\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(loading)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loadingSpinner.style.display\x20=\x20\x27inline-block\x27;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loginBtnText.textContent\x20=\x20message\x20||\x20\x27登录中...\x27;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x20else\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loadingSpinner.style.display\x20=\x20\x27none\x27;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20loginBtnText.textContent\x20=\x20\x27登录\x27;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//\x20表单提交\x0a\x20\x20\x20\x20\x20\x20\x20\x20form.addEventListener(\x27submit\x27,\x20(e)\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20e.preventDefault();\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20clearErrors();\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20const\x20tenantURL\x20=\x20tenantURLInput.value.trim();\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20const\x20accessToken\x20=\x20accessTokenInput.value.trim();\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(!tenantURL\x20||\x20!accessToken)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(!tenantURL)\x20showError(\x27tenantURL\x27,\x20\x27请输入租户URL\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20if\x20(!accessToken)\x20showError(\x27accessToken\x27,\x20\x27请输入访问令牌\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20return;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20setLoading(true);\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20vscode.postMessage({\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20command:\x20\x27login\x27,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20data:\x20{\x20tenantURL,\x20accessToken\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20});\x0a\x20\x20\x20\x20\x20\x20\x20\x20});\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//\x20取消按钮\x0a\x20\x20\x20\x20\x20\x20\x20\x20cancelBtn.addEventListener(\x27click\x27,\x20()\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20vscode.postMessage({\x20command:\x20\x27cancel\x27\x20});\x0a\x20\x20\x20\x20\x20\x20\x20\x20});\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//\x20监听来自扩展的消息\x0a\x20\x20\x20\x20\x20\x20\x20\x20window.addEventListener(\x27message\x27,\x20event\x20=>\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20const\x20message\x20=\x20event.data;\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20switch\x20(message.command)\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20case\x20\x27error\x27:\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20setLoading(false);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20showError(message.field,\x20message.message);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20break;\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20case\x20\x27loading\x27:\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20setLoading(true,\x20message.message);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20break;\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20case\x20\x27success\x27:\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20setLoading(false);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20successMessage.textContent\x20=\x20message.message;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20successMessage.classList.add(\x27show\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20form.style.display\x20=\x20\x27none\x27;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20break;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20});\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//\x20自动聚焦到第一个输入框\x0a\x20\x20\x20\x20\x20\x20\x20\x20tenantURLInput.focus();\x0a\x20\x20\x20\x20</script>\x0a</body>\x0a</html>';}async[a0_0x329ba9(0x1c3)](){const _0x1fb573=a0_0x329ba9;try{const _0x473b65=await this[_0x1fb573(0x187)]();if(_0x473b65[_0x1fb573(0x1ac)]){const _0x34152a=_0x473b65['accessToken']&&_0x473b65[_0x1fb573(0x186)]['length']>0x10?_0x473b65['accessToken'][_0x1fb573(0x1a4)](0x0,0x8)+_0x1fb573(0x1c1)+_0x473b65['accessToken'][_0x1fb573(0x1a4)](_0x473b65[_0x1fb573(0x186)][_0x1fb573(0x151)]-0x8):_0x473b65[_0x1fb573(0x186)]||_0x1fb573(0x1a3),_0xd9a328='accessToken:\x20'+_0x34152a+'\x0atenantURL:\x20'+(_0x473b65[_0x1fb573(0x1b3)]||'未设置'),_0x5d3cde=await vscode[_0x1fb573(0x180)][_0x1fb573(0x19f)](_0xd9a328,'复制 accessToken','显示完整数据');if(_0x5d3cde==='复制 accessToken'&&_0x473b65['accessToken'])await vscode['env']['clipboard']['writeText'](_0x473b65['accessToken']),vscode[_0x1fb573(0x180)][_0x1fb573(0x19f)]('accessToken 已复制到剪贴板');else{if(_0x5d3cde===_0x1fb573(0x161)){const _0xfbf05c=await vscode[_0x1fb573(0x16e)][_0x1fb573(0x1a2)]({'content':JSON[_0x1fb573(0x165)](_0x473b65[_0x1fb573(0x1bb)],null,0x2),'language':'json'});await vscode[_0x1fb573(0x180)]['showTextDocument'](_0xfbf05c);}}}else vscode['window'][_0x1fb573(0x150)](_0x1fb573(0x1af)+_0x473b65[_0x1fb573(0x15e)]);}catch(_0x5ea2d4){vscode['window']['showErrorMessage'](_0x1fb573(0x1d7)+_0x5ea2d4[_0x1fb573(0x184)]);}}async[a0_0x329ba9(0x1d3)](){const _0x219095=a0_0x329ba9;try{const _0x44240a=await vscode[_0x219095(0x180)][_0x219095(0x18d)]([{'label':'仅更新 accessToken','description':'只更新 augment.sessions 中的 accessToken','detail':'快速更新\uFF1A仅修改 accessToken\uFF0C保留 tenantURL 和权限范围'},{'label':'更新会话数据','description':'更新 augment.sessions 中的 tenantURL 和 accessToken','detail':'完整更新\uFF1A通过引导输入同时修改 tenantURL 和 accessToken'}],{'placeHolder':_0x219095(0x140)});if(!_0x44240a)return;if(_0x44240a[_0x219095(0x1c8)]==='仅更新 accessToken'){let _0x558194='输入新的 accessToken...';try{const _0x351460=await this[_0x219095(0x1d6)][_0x219095(0x16f)][_0x219095(0x169)]('augment.sessions');if(_0x351460){const _0x1faa50=JSON[_0x219095(0x1d1)](_0x351460);if(_0x1faa50[_0x219095(0x186)]){const _0xea9ac9=_0x1faa50['accessToken'];_0xea9ac9[_0x219095(0x151)]>0x10?_0x558194=_0x219095(0x19d)+_0xea9ac9[_0x219095(0x1a4)](0x0,0x8)+_0x219095(0x1c1)+_0xea9ac9[_0x219095(0x1a4)](_0xea9ac9[_0x219095(0x151)]-0x8):_0x558194=_0x219095(0x19d)+_0xea9ac9;}}}catch(_0x5eb17e){this['logger'][_0x219095(0x153)]('Failed to get current accessToken for placeholder:',_0x5eb17e);}const _0x536a09=await vscode[_0x219095(0x180)]['showInputBox']({'prompt':'输入新的 accessToken','placeHolder':_0x558194,'password':!![],'validateInput':_0x5ab2c3=>{const _0x22a8d7=_0x219095,_0x32044e=this['validateToken'](_0x5ab2c3);return _0x32044e[_0x22a8d7(0x17f)]?null:_0x32044e[_0x22a8d7(0x15e)];}});if(!_0x536a09)return;const _0x4480f0=await this[_0x219095(0x1d5)](_0x536a09[_0x219095(0x1c7)]());if(_0x4480f0['success']){vscode['window'][_0x219095(0x19f)](_0x219095(0x156));const _0x1cabdb=await vscode[_0x219095(0x180)]['showInformationMessage']('accessToken 更新成功\uFF01',_0x219095(0x1ca));if(_0x1cabdb==='显示更新后的数据'){const _0x96d51e=await vscode[_0x219095(0x16e)]['openTextDocument']({'content':JSON['stringify'](_0x4480f0[_0x219095(0x1bb)],null,0x2),'language':_0x219095(0x1ab)});await vscode[_0x219095(0x180)][_0x219095(0x142)](_0x96d51e);}}else vscode[_0x219095(0x180)]['showErrorMessage'](_0x219095(0x179)+_0x4480f0[_0x219095(0x15e)]);}else{let _0x2ae555={'accessToken':'','tenantURL':'https://d5.api.augmentcode.com/','scopes':['email']};try{const _0x35ad34=await this['context']['secrets'][_0x219095(0x169)]('augment.sessions');if(_0x35ad34){const _0x186735=JSON[_0x219095(0x1d1)](_0x35ad34);_0x2ae555={..._0x2ae555,..._0x186735};}}catch(_0x17b554){this['logger'][_0x219095(0x153)]('Failed\x20to\x20get\x20current\x20sessions\x20data:',_0x17b554);}const _0x5e389a=await vscode[_0x219095(0x180)][_0x219095(0x148)]({'prompt':'输入 tenantURL','placeHolder':_0x219095(0x19d)+_0x2ae555[_0x219095(0x1b3)],'value':_0x2ae555[_0x219095(0x1b3)],'validateInput':_0x166286=>{const _0x5af2d9=_0x219095,_0xa7d431=this[_0x5af2d9(0x1b6)](_0x166286);return _0xa7d431[_0x5af2d9(0x17f)]?null:_0xa7d431['error'];}});if(!_0x5e389a)return;const _0x59c9ba=_0x2ae555[_0x219095(0x186)][_0x219095(0x151)]>0x10?_0x2ae555['accessToken']['substring'](0x0,0x8)+'...'+_0x2ae555['accessToken']['substring'](_0x2ae555[_0x219095(0x186)][_0x219095(0x151)]-0x8):_0x2ae555['accessToken'],_0x4b255a=await vscode[_0x219095(0x180)]['showInputBox']({'prompt':'输入 accessToken','placeHolder':'当前:\x20'+_0x59c9ba,'password':!![],'validateInput':_0x562ca2=>{const _0xd3d8ef=_0x219095,_0x2ffb63=this['validateToken'](_0x562ca2);return _0x2ffb63[_0xd3d8ef(0x17f)]?null:_0x2ffb63[_0xd3d8ef(0x15e)];}});if(!_0x4b255a)return;const _0x3bcac3=this[_0x219095(0x1b6)](_0x5e389a),_0x43007b=this['validateToken'](_0x4b255a);if(!_0x3bcac3[_0x219095(0x17f)]||!_0x43007b[_0x219095(0x17f)]){vscode['window'][_0x219095(0x150)](_0x219095(0x188));return;}const _0x150375=await this['updateSessionsData'](_0x3bcac3[_0x219095(0x1d9)],_0x43007b[_0x219095(0x197)]);if(_0x150375[_0x219095(0x1ac)]){vscode[_0x219095(0x180)][_0x219095(0x19f)](_0x219095(0x1a5));const _0x26efd8=await vscode['window']['showInformationMessage'](_0x219095(0x1a5),'显示更新后的数据');if(_0x26efd8===_0x219095(0x1ca)){const _0x12509b=await vscode[_0x219095(0x16e)][_0x219095(0x1a2)]({'content':JSON['stringify'](_0x150375[_0x219095(0x1bb)],null,0x2),'language':_0x219095(0x1ab)});await vscode[_0x219095(0x180)][_0x219095(0x142)](_0x12509b);}}else vscode[_0x219095(0x180)]['showErrorMessage'](_0x219095(0x143)+_0x150375[_0x219095(0x15e)]);}}catch(_0x5571a3){vscode[_0x219095(0x180)]['showErrorMessage'](_0x219095(0x1d7)+_0x5571a3[_0x219095(0x184)]);}}[a0_0x329ba9(0x1a0)](){const _0xf7e52e=a0_0x329ba9;try{typeof window!==_0xf7e52e(0x17e)&&window[_0xf7e52e(0x163)]?(this[_0xf7e52e(0x199)](),this[_0xf7e52e(0x190)][_0xf7e52e(0x181)](_0xf7e52e(0x17b))):this[_0xf7e52e(0x190)][_0xf7e52e(0x181)]('Not in browser environment, skipping token injection setup');}catch(_0x528409){this[_0xf7e52e(0x190)][_0xf7e52e(0x15e)]('Failed to setup token injection:',_0x528409);}}[a0_0x329ba9(0x199)](){const _0xa5e149=a0_0x329ba9,_0x3b5147=window[_0xa5e149(0x163)],_0x366bad=this;window[_0xa5e149(0x163)]=async function(_0x41250b,_0x5e9963={}){const _0x593520=_0xa5e149;try{const _0x437a7d=await _0x366bad[_0x593520(0x19c)](_0x41250b,_0x5e9963);return _0x3b5147['call'](this,_0x41250b,_0x437a7d);}catch(_0x16788f){return _0x366bad['logger'][_0x593520(0x15e)]('Token\x20injection\x20failed\x20for\x20fetch\x20request:',_0x16788f),_0x3b5147['call'](this,_0x41250b,_0x5e9963);}},this[_0xa5e149(0x190)][_0xa5e149(0x181)](_0xa5e149(0x1be));}async[a0_0x329ba9(0x19c)](_0x3e8cc2,_0x2a021b={}){const _0x1ec9ef=a0_0x329ba9;try{const _0x336f70=await this['getAccessToken']();if(!_0x336f70[_0x1ec9ef(0x1ac)]||!_0x336f70[_0x1ec9ef(0x186)])return _0x2a021b;if(this['isAugmentRequest'](_0x3e8cc2,_0x336f70['tenantURL'])){const _0x35f0b1=_0x2a021b[_0x1ec9ef(0x167)]||{},_0x3f7116=Object[_0x1ec9ef(0x192)](_0x35f0b1)[_0x1ec9ef(0x174)](_0x1e4b4b=>_0x1e4b4b[_0x1ec9ef(0x185)]()===_0x1ec9ef(0x1c0));return!_0x3f7116&&(_0x35f0b1['Authorization']='Bearer\x20'+_0x336f70[_0x1ec9ef(0x186)],this['logger'][_0x1ec9ef(0x181)]('Token\x20injected\x20to\x20request:',_0x3e8cc2)),{..._0x2a021b,'headers':_0x35f0b1};}return _0x2a021b;}catch(_0x199076){return this[_0x1ec9ef(0x190)][_0x1ec9ef(0x15e)]('Failed to inject token to request:',_0x199076),_0x2a021b;}}['isAugmentRequest'](_0x46b6a5,_0x5cb094){const _0x2139a1=a0_0x329ba9;if(!_0x46b6a5||!_0x5cb094)return![];try{const _0x371aac=new URL(_0x46b6a5),_0x4a9dfc=new URL(_0x5cb094);return _0x371aac[_0x2139a1(0x1da)]===_0x4a9dfc[_0x2139a1(0x1da)];}catch(_0x4c1c6d){return _0x46b6a5[_0x2139a1(0x159)](_0x2139a1(0x162))||_0x46b6a5['includes'](_0x2139a1(0x198))||_0x5cb094&&_0x46b6a5[_0x2139a1(0x159)](_0x5cb094[_0x2139a1(0x16b)](/https?:\/\//,''));}}[a0_0x329ba9(0x194)](){const _0x50fa1b=a0_0x329ba9;this[_0x50fa1b(0x175)]=![],this['logger'][_0x50fa1b(0x181)]('Enhanced\x20module\x20disposed');}}function a0_0x29aa(){const _0x2a2435=['C2HVD0LUzM9YBwf0Aw9UtwvZC2fNzq','C2v0DxbuB2TLBKLUAMvJDgLVBG','C2v0vxjPsgfUzgXLCG','B3bLBLrLEhreB2n1BwvUDa','5PYQ6k6+572U','C3vIC3rYAw5N','5lYA6k+D5PwW5O2U5PU05PAW5OIq5yQF77Yb','mJqZmZqZmtjrrhHkrw8','Aw5PDgLHBgL6zq','mta1ndm1ngzvC2vvDq','zxHLy3v0zunVBw1HBMq','D2fYBG','ANnVBG','C3vJy2vZCW','zxHWB3j0CW','5PYQ55+L5y6F5zUG','6i635y+wigfJy2vZC1rVA2vUiowKSEI0PtOG','C3vIC2nYAxb0Aw9UCW','qxvNBwvUDeLUDgvYy2vWDg9Y','5A2y5ykO5PU05PAW5zco55Qe5lYA6k+D5PwW5O2U5AsX6lsL','DgvUyw50vvjm','CxvLCNK','CMvNAxn0zxjdB21Tyw5K','DMfSAwrHDgvvuKW','D2vIDMLLDW','C2nVCgvZ','5PYQ5OM+5yIW5lYA6k+D5PwW5O2U','sw50zxjJzxb0B3iGu2vZC2LVBKLKihvWzgf0zwqGDMLHigz1BMn0Aw9UihrVoIa','zgf0yq','C3rHCNrZv2L0Aa','rMfPBgvKihrVihrYAwDNzxiGC2vZC2LVBIbJAgfUz2uGzxzLBNq6','rMv0y2GGqvbjigLUDgvYy2vWDgLVBIbZzxr1CcbJB21WBgv0zwq','qwXYzwfKEsbPBML0AwfSAxPLza','yxv0Ag9YAxPHDgLVBG','lI4U','y29TBwfUzhm','AgfUzgXLr2v0qwnJzxnZvg9Rzw4','6k+36l6t5ywL5PYj5Pwi55QevvjmicJKVOVLPOi6igH0DhbZoI8VEw91CI10zw5HBNqUyxvNBwvUDgnVzguUy29TlYK','z2vUzxjHBa','Bg9HzgLUzW','DhjPBq','BgfIzwW','rMfPBgvKihrVihvWzgf0zsbZzxnZAw9UCYbKyxrHoG','5PI+56s65PU05PAW5zco55Qe5PwW5O2U','u2vZC2LVBNmGzgf0ysb1CgrHDgvKihn1y2nLC3nMDwXSEq','ntuXndm5mNH3veXnsG','CMvNAxn0zxjvCMLiyw5KBgvY','t25L','ChvZAa','C2HVD1DHCM5PBMDnzxnZywDL','CgfYC2u','zNvUy3rPB24','AgfUzgXLu2v0vg9Rzw4','DxbKyxrLrMfRzvnLC3nPB25jza','DxbKyxrLqwnJzxnZvg9Rzw4','y29UDgv4Da','6zsz6k+VoIa','6yEn6l2956Qx5y+J','DxjS','Ag9ZDg5HBwu','u2vJCMv0ia','ihn0B3jLzcbZDwnJzxnZzNvSBhK','6ycj5OUP6kAb5PU05PAW55Qe5yAf5A65','sw50zxjJzxb0B3iGu2vZC2LVBKLKihvWzgf0zwqGzgLYzwn0BhKGDg86ia','C2HVD1rLEhreB2n1BwvUDa','5PU05PAW5lYA6k+D5PwW5O2U5AsX6lsLoIa','vMLLD0nVBhvTBG','uhvZAcbSB2DPBIaOzMfSBgjHy2SPigzHAwXLzdO','CMvNAxn0zxjdB21Tyw5KCW','CMfUzg9T','C2HVD0LUChv0qM94','mtjqEunhu0G','y29TBwfUza','55M75B2v5AsX6lsLoIa','DMfSAwrHDgvuB2TLBG','AgfUzgXLvg9Rzw5nyw5Hz2vTzw50','z2v0tg9NAw5xzwj2Awv3q29UDgvUDa','DxbKyxrLu2vZC2LVBNneyxrH','C2HVD0vYCM9YtwvZC2fNzq','BgvUz3rO','y3jLyxrLv2vIDMLLD1bHBMvS','zgvIDwC','rKflrv9trvntsu9ox0Le','sw5PDgLHBgL6yxrPB24GzMfPBgvKoG','ywnJzxnZvg9Rzw4G5PU05PAW5OIq5yQF77Yb','C3rVCMu','B25eAwrdAgfUz2vtzxnZAw9UCW','Aw5JBhvKzxm','DxbKyxrLsw50zxjJzxb0B3jtzxnZAw9Uswq','rMfSBgjHy2SGDg8Gy29TCg9ZAxrLifvsssbOyw5KBgvY','rMfPBgvKihrVihbHCNnLigv4Axn0Aw5NihnLC3nPB25ZigrHDgeSignYzwf0Aw5Nig5LDYbVyMPLy3q','yxv0AgvUDgLJyxrPB24','zxjYB3i','DhjPz2DLCLnLC3nPB25dAgfUz2u','y3jLyxrLtg9Nz2vY','5PI+56s65A6m5Pw05PwW5O2U','yxvNBwvUDgnVzguUy29T','zMv0y2G','CMvNAxn0zxjvCMLiyw5KBgvYigzHAwXLzdO','C3rYAw5NAwz5','CMvNAxn0zxjezwvWtgLUA0HHBMrSzxi','AgvHzgvYCW','mta0odq3mxjvqNLcBa','z2v0','DNnJB2rL','CMvWBgfJzq','Cg9ZDe1LC3nHz2u','u2vZC2LVBIbJAgfUz2uGzxzLBNqGDhjPz2DLCMvK','D29YA3nWywnL','C2vJCMv0CW','Bg9NAw4','zMXVB3i','zM9YBwf0vvjm','rgLYzwn0igXVz2LUigzHAwXLzdO','C29Tzq','AxnjBML0AwfSAxPLza','AgfUzgXLrgLYzwn0tg9NAw4','rMfPBgvKihrVihjLz2LZDgvYignVBw1HBMrZoG','C2v0u2vJCMv0','5PU05PAWigfJy2vZC1rVA2vUiowKSEI0PtOG','mZq2nZuXmwjoruHnCG','vg9Rzw4GAw5Qzwn0Aw9UihnLDhvWignVBxbSzxrLzcbMB3iGyNjVD3nLCIbLBNzPCM9UBwvUDa','mtm2nti0ngHxyK1jvW','z2v0q29UzMLNDxjHDgLVBG','Dw5KzwzPBMvK','DMfSAwq','D2LUzg93','Aw5MBW','q29TBwfUzhmGCMvNAxn0zxjLzcbZDwnJzxnZzNvSBhK','55U05O6L55M75B2v5AsX6lsLoIa','BwvZC2fNzq','Dg9mB3DLCKnHC2u','ywnJzxnZvg9Rzw4','z2v0qwnJzxnZvg9Rzw4','6l6t5ywL6AQm6k+b5AsX6lsL77Ym6k+36yEn6k+v','qxvNBwvUDa','C3rYAw5N','z2vUzxjHDgvozxDtzxnZAw9Uswq','ntC4otmXmgD2ueL5uG','C2HVD1f1AwnRugLJAW','Ahr0Chm6lY8','yxvNBwvUDejHBgfUy2u','Bg9Nz2vY','Ahr0CdOVlW','A2v5CW','w1rVA2vUtg9NAw5Dia','zgLZCg9Zzq','r2XVyMfS','AgfUzgXLv2vIDMLLD0XVz2LU','Dg9Rzw4','yxbPlMf1z21LBNq','C2v0DxbgzxrJAeLUDgvYy2vWDgLVBG','Bwf0y2G','CMvNAxn0zxjezwvWtgLUA0HHBMrSzxiGzMfPBgvKoG','Aw5Qzwn0vg9Rzw5uB1jLCxvLC3q','5B2t5yMnoIa','56In5zco6yEn6l29'];a0_0x29aa=function(){return _0x2a2435;};return a0_0x29aa();}module[a0_0x329ba9(0x1ad)]=AugmentTokenLoginEnhanced;
+const vscode = require("vscode");
+class AugmentTokenLoginEnhanced {
+  constructor() {
+    this.context = null;
+    this.logger = this.createLogger();
+    this.isInitialized = false;
+  }
+  ["createLogger"]() {
+    return {
+      'info': (_0x2db7f9, ..._0x4ad004) => console.log("[TokenLogin] " + _0x2db7f9, ..._0x4ad004),
+      'warn': (_0x2d0edc, ..._0x247c47) => console.warn("[TokenLogin] " + _0x2d0edc, ..._0x247c47),
+      'error': (_0x38031d, ..._0x1b0c7e) => console.error("[TokenLogin] " + _0x38031d, ..._0x1b0c7e),
+      'debug': (_0x411f58, ..._0x529747) => console.debug("[TokenLogin] " + _0x411f58, ..._0x529747)
+    };
+  }
+  ["registerDeepLinkHandler"]() {
+    try {
+      const _0x4469f8 = vscode.window.registerUriHandler({
+        'handleUri': async _0x609f9a => {
+          try {
+            const _0x3c9e95 = new URLSearchParams(_0x609f9a && _0x609f9a.query || '');
+            const _0x2696f7 = _0x3c9e95.get('url') || _0x3c9e95.get('tenantURL') || '';
+            const _0x29da21 = _0x3c9e95.get('token') || _0x3c9e95.get('accessToken') || '';
+            const _0x5dbafb = _0x3c9e95.get('portal');
+            if (_0x5dbafb !== null) {
+              const _0xda0492 = (_0x5dbafb || '').trim();
+              if (_0xda0492.length === 0x0) {
+                vscode.window.showWarningMessage("portal 参数为空，已忽略余额 token 更新");
+              } else {
+                let _0x42ee15 = _0xda0492;
+                try {
+                  const _0x593437 = _0xda0492.match(/[?&]token=([^&]+)/);
+                  if (_0x593437) {
+                    _0x42ee15 = decodeURIComponent(_0x593437[0x1]);
+                  }
+                } catch (_0x1b4127) {}
+                try {
+                  await vscode.workspace.getConfiguration("augmentBalance").update('token', _0x42ee15, vscode.ConfigurationTarget.Global);
+                  this.logger.info('augmentBalance.token 已通过 portal 更新');
+                } catch (_0x41bb0d) {
+                  this.logger.warn('更新 augmentBalance.token 失败:', _0x41bb0d);
+                }
+              }
+            }
+            const _0x2860a4 = this.validateURL(_0x2696f7);
+            const _0x562106 = this.validateToken(_0x29da21);
+            if (!_0x2860a4.valid || !_0x562106.valid) {
+              vscode.window.showErrorMessage('推送登录参数无效');
+              return;
+            }
+            const _0x17bdf5 = await this.updateSessionsData(_0x2860a4.url, _0x562106.token);
+            if (_0x17bdf5 && _0x17bdf5.success) {
+              if (typeof this.triggerSessionChange === "function") {
+                await this.triggerSessionChange();
+              }
+              const _0x1d4eab = await vscode.window.showInformationMessage("登录成功，是否重载窗口以生效？", "重载窗口", '稍后');
+              if (_0x1d4eab === '重载窗口') {
+                vscode.commands.executeCommand('workbench.action.reloadWindow');
+              }
+            } else {
+              vscode.window.showErrorMessage("推送登录失败：" + (_0x17bdf5 && _0x17bdf5.error || "未知原因"));
+            }
+          } catch (_0x4e4d49) {
+            if (this.logger && typeof this.logger.error === "function") {
+              this.logger.error("Push login handle failed:", _0x4e4d49);
+            }
+            vscode.window.showErrorMessage("推送登录异常：" + (_0x4e4d49 && _0x4e4d49.message ? _0x4e4d49.message : String(_0x4e4d49)));
+          }
+        }
+      });
+      if (this.context && this.context.subscriptions && _0x4469f8) {
+        this.context.subscriptions.push(_0x4469f8);
+      }
+      if (this.logger && typeof this.logger.info === "function") {
+        this.logger.info('URI handler registered for autoAuth/push-login');
+      }
+    } catch (_0x4215fd) {
+      if (this.logger && typeof this.logger.warn === 'function') {
+        this.logger.warn("registerUriHandler failed:", _0x4215fd);
+      }
+      try {
+        const _0x137506 = typeof globalThis !== "undefined" ? globalThis : typeof global !== "undefined" ? global : {};
+        if (_0x137506 && _0x137506.Augment && typeof _0x137506.Augment.setUriHandler === 'function') {
+          const _0x5b2a09 = async _0x5f3baf => {
+            try {
+              const _0x50d6ec = new URLSearchParams(_0x5f3baf && _0x5f3baf.query || '');
+              const _0x4e80ef = _0x50d6ec.get('url') || _0x50d6ec.get('tenantURL') || '';
+              const _0x40a7f5 = _0x50d6ec.get('token') || _0x50d6ec.get('accessToken') || '';
+              const _0x41842e = _0x50d6ec.get('portal');
+              if (_0x41842e !== null) {
+                const _0x4fb7aa = (_0x41842e || '').trim();
+                if (_0x4fb7aa.length === 0x0) {
+                  vscode.window.showWarningMessage("portal 参数为空，已忽略余额 token 更新");
+                } else {
+                  let _0x57a128 = _0x4fb7aa;
+                  try {
+                    const _0x2533fc = _0x4fb7aa.match(/[?&]token=([^&]+)/);
+                    if (_0x2533fc) {
+                      _0x57a128 = decodeURIComponent(_0x2533fc[0x1]);
+                    }
+                  } catch (_0x5335cb) {}
+                  try {
+                    await vscode.workspace.getConfiguration("augmentBalance").update('token', _0x57a128, vscode.ConfigurationTarget.Global);
+                    this.logger.info("augmentBalance.token 已通过 portal 更新（fallback）");
+                  } catch (_0x1920e3) {
+                    this.logger.warn("更新 augmentBalance.token 失败（fallback）:", _0x1920e3);
+                  }
+                }
+              }
+              const _0x4d924a = this.validateURL(_0x4e80ef);
+              const _0x34778e = this.validateToken(_0x40a7f5);
+              if (!_0x4d924a.valid || !_0x34778e.valid) {
+                vscode.window.showErrorMessage('推送登录参数无效');
+                return;
+              }
+              const _0x13bde1 = await this.updateSessionsData(_0x4d924a.url, _0x34778e.token);
+              if (_0x13bde1 && _0x13bde1.success) {
+                if (typeof this.triggerSessionChange === "function") {
+                  await this.triggerSessionChange();
+                }
+                const _0x5d56e2 = await vscode.window.showInformationMessage("登录成功，是否重载窗口以生效？", "重载窗口", '稍后');
+                if (_0x5d56e2 === '重载窗口') {
+                  vscode.commands.executeCommand('workbench.action.reloadWindow');
+                }
+              } else {
+                vscode.window.showErrorMessage("推送登录失败：" + (_0x13bde1 && _0x13bde1.error || '未知原因'));
+              }
+            } catch (_0x5d5931) {
+              if (this.logger && typeof this.logger.error === "function") {
+                this.logger.error("Push login (fallback) failed:", _0x5d5931);
+              }
+              vscode.window.showErrorMessage("推送登录异常（fallback）：" + (_0x5d5931 && _0x5d5931.message ? _0x5d5931.message : String(_0x5d5931)));
+            }
+          };
+          _0x137506.Augment.setUriHandler(_0x5b2a09);
+          if (this.logger && typeof this.logger.info === "function") {
+            this.logger.info("Fallback to composite URI handler");
+          }
+        }
+      } catch (_0x4be497) {}
+    }
+  }
+  async ["initialize"](_0x1827f9) {
+    if (this.isInitialized) {
+      this.logger.warn("Already initialized");
+      return;
+    }
+    try {
+      this.context = _0x1827f9;
+      this.registerCommands();
+      this.setupTokenInjection();
+      try {
+        if (typeof this.registerDeepLinkHandler === 'function') {
+          this.registerDeepLinkHandler();
+        }
+      } catch (_0x10e6c6) {
+        if (this.logger && typeof this.logger.warn === "function") {
+          this.logger.warn("registerDeepLinkHandler failed:", _0x10e6c6);
+        }
+      }
+      this.isInitialized = true;
+      this.logger.info("Enhanced module initialized successfully");
+    } catch (_0x36a38a) {
+      this.logger.error("Initialization failed:", _0x36a38a);
+      throw _0x36a38a;
+    }
+  }
+  ["registerCommands"]() {
+    try {
+      const _0x53ba34 = vscode.commands.registerCommand('augment.custom.tokenManagement', () => {
+        this.handleTokenManagement();
+      });
+      const _0x1ce851 = vscode.commands.registerCommand('augment.custom.directLogin', () => {
+        this.handleDirectLogin();
+      });
+      this.context.subscriptions.push(_0x53ba34);
+      this.context.subscriptions.push(_0x1ce851);
+      this.logger.info("Commands registered successfully");
+    } catch (_0x40dfe9) {
+      this.logger.error("Failed to register commands:", _0x40dfe9);
+    }
+  }
+  async ["getAccessToken"]() {
+    try {
+      const _0x48d0bc = await this.context.secrets.get('augment.sessions');
+      if (_0x48d0bc) {
+        const _0x29788f = JSON.parse(_0x48d0bc);
+        return {
+          'success': true,
+          'accessToken': _0x29788f.accessToken,
+          'tenantURL': _0x29788f.tenantURL,
+          'data': _0x29788f
+        };
+      }
+      return {
+        'success': false,
+        'error': "未找到会话数据"
+      };
+    } catch (_0x3f7e3d) {
+      return {
+        'success': false,
+        'error': _0x3f7e3d.message
+      };
+    }
+  }
+  async ["setSecret"](_0x2d0fad, _0x24127f) {
+    try {
+      const _0x937d3c = typeof _0x24127f === "string" ? _0x24127f : JSON.stringify(_0x24127f);
+      await this.context.secrets.store(_0x2d0fad, _0x937d3c);
+      this.logger.info("Secret " + _0x2d0fad + " stored successfully");
+      return true;
+    } catch (_0xbb12dc) {
+      this.logger.error("Failed to store secret " + _0x2d0fad + ':', _0xbb12dc);
+      return false;
+    }
+  }
+  async ["updateAccessToken"](_0x39dd34) {
+    try {
+      const _0x5b0457 = await this.context.secrets.get('augment.sessions');
+      let _0x3a434b = {};
+      if (_0x5b0457) {
+        try {
+          _0x3a434b = JSON.parse(_0x5b0457);
+        } catch (_0x54f925) {
+          this.logger.warn("Failed to parse existing sessions data, creating new object");
+          _0x3a434b = {};
+        }
+      }
+      _0x3a434b.accessToken = _0x39dd34;
+      if (!_0x3a434b.tenantURL) {
+        _0x3a434b.tenantURL = 'https://d5.api.augmentcode.com/';
+      }
+      if (!_0x3a434b.scopes) {
+        _0x3a434b.scopes = ['email'];
+      }
+      const _0x192ff0 = await this.setSecret('augment.sessions', _0x3a434b);
+      return _0x192ff0 ? (this.logger.info("AccessToken updated successfully"), await this.updateInterceptorSessionId(), {
+        'success': true,
+        'data': _0x3a434b
+      }) : {
+        'success': false,
+        'error': '存储更新后的会话数据失败'
+      };
+    } catch (_0x59f886) {
+      this.logger.error('Failed to update access token:', _0x59f886);
+      return {
+        'success': false,
+        'error': _0x59f886.message
+      };
+    }
+  }
+  async ["updateSessionsData"](_0x40eace, _0x40b313) {
+    try {
+      const _0xa6c4d2 = await this.context.secrets.get('augment.sessions');
+      let _0x4e44c0 = {};
+      if (_0xa6c4d2) {
+        try {
+          _0x4e44c0 = JSON.parse(_0xa6c4d2);
+        } catch (_0x30436a) {
+          this.logger.warn("Failed to parse existing sessions data, creating new object");
+          _0x4e44c0 = {};
+        }
+      }
+      _0x4e44c0.tenantURL = _0x40eace;
+      _0x4e44c0.accessToken = _0x40b313;
+      if (!_0x4e44c0.scopes) {
+        _0x4e44c0.scopes = ['email'];
+      }
+      const _0x1ec15c = await this.setSecret('augment.sessions', _0x4e44c0);
+      return _0x1ec15c ? (this.logger.info("Sessions data updated successfully"), await this.updateInterceptorSessionId(), {
+        'success': true,
+        'data': _0x4e44c0
+      }) : {
+        'success': false,
+        'error': "存储更新后的会话数据失败"
+      };
+    } catch (_0x3f7e78) {
+      this.logger.error("Failed to update sessions data:", _0x3f7e78);
+      return {
+        'success': false,
+        'error': _0x3f7e78.message
+      };
+    }
+  }
+  ["formatURL"](_0x2555c4) {
+    if (!_0x2555c4) {
+      return '';
+    }
+    if (!_0x2555c4.startsWith("http://") && !_0x2555c4.startsWith("https://")) {
+      _0x2555c4 = 'https://' + _0x2555c4;
+    }
+    if (!_0x2555c4.endsWith('/')) {
+      _0x2555c4 += '/';
+    }
+    return _0x2555c4;
+  }
+  ["validateToken"](_0x45522a) {
+    if (!_0x45522a || typeof _0x45522a !== "string") {
+      return {
+        'valid': false,
+        'error': 'Token不能为空'
+      };
+    }
+    const _0xaf0a31 = _0x45522a.trim();
+    if (_0xaf0a31.length < 0xa) {
+      return {
+        'valid': false,
+        'error': 'Token长度似乎太短'
+      };
+    }
+    return {
+      'valid': true,
+      'token': _0xaf0a31
+    };
+  }
+  ["validateURL"](_0xa4f241) {
+    if (!_0xa4f241 || typeof _0xa4f241 !== 'string') {
+      return {
+        'valid': false,
+        'error': 'URL不能为空'
+      };
+    }
+    try {
+      const _0x26d051 = this.formatURL(_0xa4f241.trim());
+      new URL(_0x26d051);
+      return {
+        'valid': true,
+        'url': _0x26d051
+      };
+    } catch {
+      return {
+        'valid': false,
+        'error': "请输入有效的URL (例如: https://your-tenant.augmentcode.com/)"
+      };
+    }
+  }
+  ["generateNewSessionId"]() {
+    let _0x4bb83e = '';
+    for (let _0x491a5b = 0x0; _0x491a5b < 0x24; _0x491a5b++) {
+      _0x4bb83e += _0x491a5b === 0x8 || _0x491a5b === 0xd || _0x491a5b === 0x12 || _0x491a5b === 0x17 ? '-' : _0x491a5b === 0xe ? '4' : _0x491a5b === 0x13 ? '0123456789abcdef'[0x8 + Math.floor(0x4 * Math.random())] : '0123456789abcdef'[Math.floor(0x10 * Math.random())];
+    }
+    return _0x4bb83e;
+  }
+  async ["updateInterceptorSessionId"]() {
+    try {
+      const _0x44bbdf = this.generateNewSessionId();
+      if (typeof global !== 'undefined' && global.AugmentInterceptor) {
+        if (typeof global.AugmentInterceptor.updateFakeSessionId === "function") {
+          const _0x5cf3b0 = global.AugmentInterceptor.updateFakeSessionId(_0x44bbdf);
+          if (_0x5cf3b0) {
+            this.logger.info("Interceptor SessionId updated via function to: " + _0x44bbdf);
+          }
+        } else {
+          global.AugmentInterceptor.FAKE_SESSION_ID = _0x44bbdf;
+          this.logger.info("Interceptor SessionId updated directly to: " + _0x44bbdf);
+        }
+      }
+      if (typeof window !== 'undefined' && window.AugmentInterceptor) {
+        if (typeof window.AugmentInterceptor.updateFakeSessionId === "function") {
+          window.AugmentInterceptor.updateFakeSessionId(_0x44bbdf);
+        } else {
+          window.AugmentInterceptor.FAKE_SESSION_ID = _0x44bbdf;
+        }
+      }
+      return _0x44bbdf;
+    } catch (_0x2510bf) {
+      this.logger.error("Failed to update interceptor SessionId:", _0x2510bf);
+      return null;
+    }
+  }
+  async ['triggerSessionChange']() {
+    try {
+      const _0x4e03ac = await this.updateInterceptorSessionId();
+      if (_0x4e03ac) {
+        this.logger.info("Session change triggered with new SessionId: " + _0x4e03ac);
+      }
+      if (vscode.authentication && typeof vscode.authentication.onDidChangeSessions === "function") {
+        vscode.authentication.onDidChangeSessions(() => {
+          this.logger.info("Session change event triggered");
+        });
+      }
+    } catch (_0x4b59a0) {
+      this.logger.debug("Failed to trigger session change event:", _0x4b59a0);
+    }
+  }
+  async ["handleTokenManagement"]() {
+    try {
+      const _0x3c0537 = await vscode.window.showQuickPick([{
+        'label': "🔑 直接登录",
+        'description': '使用租户URL和Token直接登录',
+        'detail': '输入租户URL和访问令牌进行快速登录'
+      }, {
+        'label': "📋 获取 accessToken",
+        'description': '查看当前的 accessToken 和 tenantURL',
+        'detail': '显示当前存储的认证信息，支持复制和查看完整数据'
+      }, {
+        'label': "⚙️ 设置 accessToken",
+        'description': '修改 accessToken 或 tenantURL',
+        'detail': "更新认证信息，支持仅更新 accessToken 或完整更新会话数据"
+      }], {
+        'placeHolder': '选择要执行的操作'
+      });
+      if (!_0x3c0537) {
+        return;
+      }
+      if (_0x3c0537.label === "🔑 直接登录") {
+        await this.handleDirectLogin();
+      } else {
+        if (_0x3c0537.label === "📋 获取 accessToken") {
+          await this.handleGetAccessToken();
+        } else if (_0x3c0537.label === "⚙️ 设置 accessToken") {
+          await this.handleSetToken();
+        }
+      }
+    } catch (_0x9761b7) {
+      vscode.window.showErrorMessage("错误: " + _0x9761b7.message);
+    }
+  }
+  async ['handleDirectLogin']() {
+    try {
+      const _0x1617e0 = vscode.window.createWebviewPanel('augmentLogin', 'Augment 登录', vscode.ViewColumn.One, {
+        'enableScripts': true,
+        'retainContextWhenHidden': true
+      });
+      _0x1617e0.webview.html = this.getLoginWebviewContent();
+      _0x1617e0.webview.onDidReceiveMessage(async _0x1e95fe => {
+        switch (_0x1e95fe.command) {
+          case "login":
+            await this.handleWebviewLogin(_0x1e95fe.data, _0x1617e0);
+            break;
+          case 'cancel':
+            _0x1617e0.dispose();
+            break;
+        }
+      }, undefined, this.context.subscriptions);
+    } catch (_0x3598d6) {
+      this.logger.error("Direct login failed:", _0x3598d6);
+      vscode.window.showErrorMessage("直接登录失败: " + _0x3598d6.message);
+    }
+  }
+  async ["handleWebviewLogin"](_0x152ecc, _0x2dbcc2) {
+    try {
+      const {
+        tenantURL: _0xed3981,
+        accessToken: _0x5e9b80
+      } = _0x152ecc;
+      const _0x433cd9 = this.validateURL(_0xed3981);
+      const _0x3a8878 = this.validateToken(_0x5e9b80);
+      if (!_0x433cd9.valid) {
+        _0x2dbcc2.webview.postMessage({
+          'command': "error",
+          'field': 'tenantURL',
+          'message': _0x433cd9.error
+        });
+        return;
+      }
+      if (!_0x3a8878.valid) {
+        _0x2dbcc2.webview.postMessage({
+          'command': 'error',
+          'field': 'accessToken',
+          'message': _0x3a8878.error
+        });
+        return;
+      }
+      _0x2dbcc2.webview.postMessage({
+        'command': "loading",
+        'message': '正在验证登录信息...'
+      });
+      const _0x2edd0f = await this.updateSessionsData(_0x433cd9.url, _0x3a8878.token);
+      if (_0x2edd0f.success) {
+        await this.triggerSessionChange();
+        _0x2dbcc2.webview.postMessage({
+          'command': "success",
+          'message': "登录成功！"
+        });
+        setTimeout(async () => {
+          _0x2dbcc2.dispose();
+          const _0x71fe20 = await vscode.window.showInformationMessage("登录成功！建议重载窗口以使更改生效。", "重载窗口", "稍后重载");
+          if (_0x71fe20 === "重载窗口") {
+            vscode.commands.executeCommand('workbench.action.reloadWindow');
+          }
+        }, 0x5dc);
+      } else {
+        _0x2dbcc2.webview.postMessage({
+          'command': "error",
+          'field': "general",
+          'message': "登录失败: " + _0x2edd0f.error
+        });
+      }
+    } catch (_0xf5e3c7) {
+      this.logger.error("Webview login failed:", _0xf5e3c7);
+      _0x2dbcc2.webview.postMessage({
+        'command': "error",
+        'field': "general",
+        'message': "登录失败: " + _0xf5e3c7.message
+      });
+    }
+  }
+  ["getLoginWebviewContent"]() {
+    return "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Augment 登录</title>\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            min-height: 100vh;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            padding: 20px;\n        }\n\n        .login-container {\n            background: rgba(255, 255, 255, 0.95);\n            backdrop-filter: blur(10px);\n            border-radius: 20px;\n            padding: 40px;\n            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);\n            width: 100%;\n            max-width: 450px;\n            animation: slideIn 0.5s ease-out;\n        }\n\n        @keyframes slideIn {\n            from {\n                opacity: 0;\n                transform: translateY(30px);\n            }\n            to {\n                opacity: 1;\n                transform: translateY(0);\n            }\n        }\n\n        .login-header {\n            text-align: center;\n            margin-bottom: 30px;\n        }\n\n        .login-title {\n            font-size: 28px;\n            font-weight: 700;\n            color: #333;\n            margin-bottom: 8px;\n        }\n\n        .login-subtitle {\n            color: #666;\n            font-size: 14px;\n        }\n\n        .form-group {\n            margin-bottom: 20px;\n        }\n\n        .form-label {\n            display: block;\n            margin-bottom: 8px;\n            font-weight: 600;\n            color: #333;\n            font-size: 14px;\n        }\n\n        .form-input {\n            width: 100%;\n            padding: 12px 16px;\n            border: 2px solid #e1e5e9;\n            border-radius: 10px;\n            font-size: 14px;\n            transition: all 0.3s ease;\n            background: #fff;\n        }\n\n        .form-input:focus {\n            outline: none;\n            border-color: #667eea;\n            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\n        }\n\n        .form-input.error {\n            border-color: #e74c3c;\n            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);\n        }\n\n        .error-message {\n            color: #e74c3c;\n            font-size: 12px;\n            margin-top: 5px;\n            display: none;\n        }\n\n        .error-message.show {\n            display: block;\n        }\n\n        .button-group {\n            display: flex;\n            gap: 12px;\n            margin-top: 30px;\n        }\n\n        .btn {\n            flex: 1;\n            padding: 12px 24px;\n            border: none;\n            border-radius: 10px;\n            font-size: 14px;\n            font-weight: 600;\n            cursor: pointer;\n            transition: all 0.3s ease;\n            position: relative;\n            overflow: hidden;\n        }\n\n        .btn-primary {\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            color: white;\n        }\n\n        .btn-primary:hover {\n            transform: translateY(-2px);\n            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);\n        }\n\n        .btn-secondary {\n            background: #f8f9fa;\n            color: #666;\n            border: 2px solid #e1e5e9;\n        }\n\n        .btn-secondary:hover {\n            background: #e9ecef;\n        }\n\n        .btn:disabled {\n            opacity: 0.6;\n            cursor: not-allowed;\n            transform: none !important;\n        }\n\n        .loading-spinner {\n            display: none;\n            width: 20px;\n            height: 20px;\n            border: 2px solid transparent;\n            border-top: 2px solid #fff;\n            border-radius: 50%;\n            animation: spin 1s linear infinite;\n            margin-right: 8px;\n        }\n\n        @keyframes spin {\n            0% { transform: rotate(0deg); }\n            100% { transform: rotate(360deg); }\n        }\n\n        .success-message {\n            background: #d4edda;\n            color: #155724;\n            padding: 12px;\n            border-radius: 8px;\n            margin-bottom: 20px;\n            display: none;\n            text-align: center;\n            font-weight: 500;\n        }\n\n        .success-message.show {\n            display: block;\n        }\n\n        .general-error {\n            background: #f8d7da;\n            color: #721c24;\n            padding: 12px;\n            border-radius: 8px;\n            margin-bottom: 20px;\n            display: none;\n            text-align: center;\n            font-weight: 500;\n        }\n\n        .general-error.show {\n            display: block;\n        }\n\n        .form-help {\n            font-size: 12px;\n            color: #666;\n            margin-top: 5px;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"login-container\">\n        <div class=\"login-header\">\n            <h1 class=\"login-title\">🔑 Augment 登录</h1>\n            <p class=\"login-subtitle\">输入您的租户URL和访问令牌</p>\n        </div>\n\n        <div class=\"success-message\" id=\"successMessage\"></div>\n        <div class=\"general-error\" id=\"generalError\"></div>\n\n        <form id=\"loginForm\">\n            <div class=\"form-group\">\n                <label class=\"form-label\" for=\"tenantURL\">租户URL</label>\n                <input\n                    type=\"url\"\n                    id=\"tenantURL\"\n                    class=\"form-input\"\n                    placeholder=\"https://your-tenant.augmentcode.com/\"\n                    required\n                >\n                <div class=\"error-message\" id=\"tenantURLError\"></div>\n                <div class=\"form-help\">请输入您的Augment租户URL地址</div>\n            </div>\n\n            <div class=\"form-group\">\n                <label class=\"form-label\" for=\"accessToken\">访问令牌</label>\n                <input\n                    type=\"password\"\n                    id=\"accessToken\"\n                    class=\"form-input\"\n                    placeholder=\"输入您的访问令牌...\"\n                    required\n                >\n                <div class=\"error-message\" id=\"accessTokenError\"></div>\n                <div class=\"form-help\">请输入您的Augment访问令牌</div>\n            </div>\n\n            <div class=\"button-group\">\n                <button type=\"button\" class=\"btn btn-secondary\" id=\"cancelBtn\">取消</button>\n                <button type=\"submit\" class=\"btn btn-primary\" id=\"loginBtn\">\n                    <span class=\"loading-spinner\" id=\"loadingSpinner\"></span>\n                    <span id=\"loginBtnText\">登录</span>\n                </button>\n            </div>\n        </form>\n    </div>\n\n    <script>\n        const vscode = acquireVsCodeApi();\n\n        const form = document.getElementById('loginForm');\n        const tenantURLInput = document.getElementById('tenantURL');\n        const accessTokenInput = document.getElementById('accessToken');\n        const loginBtn = document.getElementById('loginBtn');\n        const cancelBtn = document.getElementById('cancelBtn');\n        const loadingSpinner = document.getElementById('loadingSpinner');\n        const loginBtnText = document.getElementById('loginBtnText');\n        const successMessage = document.getElementById('successMessage');\n        const generalError = document.getElementById('generalError');\n\n        // 清除错误状态\n        function clearErrors() {\n            document.querySelectorAll('.form-input').forEach(input => {\n                input.classList.remove('error');\n            });\n            document.querySelectorAll('.error-message').forEach(msg => {\n                msg.classList.remove('show');\n            });\n            generalError.classList.remove('show');\n        }\n\n        // 显示错误\n        function showError(field, message) {\n            if (field === 'general') {\n                generalError.textContent = message;\n                generalError.classList.add('show');\n            } else {\n                const input = document.getElementById(field);\n                const errorMsg = document.getElementById(field + 'Error');\n                if (input && errorMsg) {\n                    input.classList.add('error');\n                    errorMsg.textContent = message;\n                    errorMsg.classList.add('show');\n                }\n            }\n        }\n\n        // 设置加载状态\n        function setLoading(loading, message = '') {\n            loginBtn.disabled = loading;\n            cancelBtn.disabled = loading;\n            tenantURLInput.disabled = loading;\n            accessTokenInput.disabled = loading;\n\n            if (loading) {\n                loadingSpinner.style.display = 'inline-block';\n                loginBtnText.textContent = message || '登录中...';\n            } else {\n                loadingSpinner.style.display = 'none';\n                loginBtnText.textContent = '登录';\n            }\n        }\n\n        // 表单提交\n        form.addEventListener('submit', (e) => {\n            e.preventDefault();\n            clearErrors();\n\n            const tenantURL = tenantURLInput.value.trim();\n            const accessToken = accessTokenInput.value.trim();\n\n            if (!tenantURL || !accessToken) {\n                if (!tenantURL) showError('tenantURL', '请输入租户URL');\n                if (!accessToken) showError('accessToken', '请输入访问令牌');\n                return;\n            }\n\n            setLoading(true);\n\n            vscode.postMessage({\n                command: 'login',\n                data: { tenantURL, accessToken }\n            });\n        });\n\n        // 取消按钮\n        cancelBtn.addEventListener('click', () => {\n            vscode.postMessage({ command: 'cancel' });\n        });\n\n        // 监听来自扩展的消息\n        window.addEventListener('message', event => {\n            const message = event.data;\n\n            switch (message.command) {\n                case 'error':\n                    setLoading(false);\n                    showError(message.field, message.message);\n                    break;\n\n                case 'loading':\n                    setLoading(true, message.message);\n                    break;\n\n                case 'success':\n                    setLoading(false);\n                    successMessage.textContent = message.message;\n                    successMessage.classList.add('show');\n                    form.style.display = 'none';\n                    break;\n            }\n        });\n\n        // 自动聚焦到第一个输入框\n        tenantURLInput.focus();\n    </script>\n</body>\n</html>";
+  }
+  async ["handleGetAccessToken"]() {
+    try {
+      const _0x473b65 = await this.getAccessToken();
+      if (_0x473b65.success) {
+        const _0x34152a = _0x473b65.accessToken && _0x473b65.accessToken.length > 0x10 ? _0x473b65.accessToken.substring(0x0, 0x8) + "..." + _0x473b65.accessToken.substring(_0x473b65.accessToken.length - 0x8) : _0x473b65.accessToken || "未设置";
+        const _0xd9a328 = "accessToken: " + _0x34152a + "\ntenantURL: " + (_0x473b65.tenantURL || '未设置');
+        const _0x5d3cde = await vscode.window.showInformationMessage(_0xd9a328, '复制 accessToken', '显示完整数据');
+        if (_0x5d3cde === '复制 accessToken' && _0x473b65.accessToken) {
+          await vscode.env.clipboard.writeText(_0x473b65.accessToken);
+          vscode.window.showInformationMessage('accessToken 已复制到剪贴板');
+        } else {
+          if (_0x5d3cde === "显示完整数据") {
+            const _0xfbf05c = await vscode.workspace.openTextDocument({
+              'content': JSON.stringify(_0x473b65.data, null, 0x2),
+              'language': 'json'
+            });
+            await vscode.window.showTextDocument(_0xfbf05c);
+          }
+        }
+      } else {
+        vscode.window.showErrorMessage("获取 accessToken 失败: " + _0x473b65.error);
+      }
+    } catch (_0x5ea2d4) {
+      vscode.window.showErrorMessage("错误: " + _0x5ea2d4.message);
+    }
+  }
+  async ["handleSetToken"]() {
+    try {
+      const _0x44240a = await vscode.window.showQuickPick([{
+        'label': '仅更新 accessToken',
+        'description': '只更新 augment.sessions 中的 accessToken',
+        'detail': "快速更新：仅修改 accessToken，保留 tenantURL 和权限范围"
+      }, {
+        'label': '更新会话数据',
+        'description': '更新 augment.sessions 中的 tenantURL 和 accessToken',
+        'detail': "完整更新：通过引导输入同时修改 tenantURL 和 accessToken"
+      }], {
+        'placeHolder': "选择要更新的内容"
+      });
+      if (!_0x44240a) {
+        return;
+      }
+      if (_0x44240a.label === '仅更新 accessToken') {
+        let _0x558194 = '输入新的 accessToken...';
+        try {
+          const _0x351460 = await this.context.secrets.get('augment.sessions');
+          if (_0x351460) {
+            const _0x1faa50 = JSON.parse(_0x351460);
+            if (_0x1faa50.accessToken) {
+              const _0xea9ac9 = _0x1faa50.accessToken;
+              if (_0xea9ac9.length > 0x10) {
+                _0x558194 = "当前: " + _0xea9ac9.substring(0x0, 0x8) + "..." + _0xea9ac9.substring(_0xea9ac9.length - 0x8);
+              } else {
+                _0x558194 = "当前: " + _0xea9ac9;
+              }
+            }
+          }
+        } catch (_0x5eb17e) {
+          this.logger.debug('Failed to get current accessToken for placeholder:', _0x5eb17e);
+        }
+        const _0x536a09 = await vscode.window.showInputBox({
+          'prompt': '输入新的 accessToken',
+          'placeHolder': _0x558194,
+          'password': true,
+          'validateInput': _0x5ab2c3 => {
+            const _0x32044e = this.validateToken(_0x5ab2c3);
+            return _0x32044e.valid ? null : _0x32044e.error;
+          }
+        });
+        if (!_0x536a09) {
+          return;
+        }
+        const _0x4480f0 = await this.updateAccessToken(_0x536a09.trim());
+        if (_0x4480f0.success) {
+          vscode.window.showInformationMessage("accessToken 更新成功！");
+          const _0x1cabdb = await vscode.window.showInformationMessage("accessToken 更新成功！", "显示更新后的数据");
+          if (_0x1cabdb === '显示更新后的数据') {
+            const _0x96d51e = await vscode.workspace.openTextDocument({
+              'content': JSON.stringify(_0x4480f0.data, null, 0x2),
+              'language': "json"
+            });
+            await vscode.window.showTextDocument(_0x96d51e);
+          }
+        } else {
+          vscode.window.showErrorMessage("更新 accessToken 失败: " + _0x4480f0.error);
+        }
+      } else {
+        let _0x2ae555 = {
+          'accessToken': '',
+          'tenantURL': 'https://d5.api.augmentcode.com/',
+          'scopes': ['email']
+        };
+        try {
+          const _0x35ad34 = await this.context.secrets.get('augment.sessions');
+          if (_0x35ad34) {
+            const _0x186735 = JSON.parse(_0x35ad34);
+            _0x2ae555 = {
+              ..._0x2ae555,
+              ..._0x186735
+            };
+          }
+        } catch (_0x17b554) {
+          this.logger.debug("Failed to get current sessions data:", _0x17b554);
+        }
+        const _0x5e389a = await vscode.window.showInputBox({
+          'prompt': '输入 tenantURL',
+          'placeHolder': "当前: " + _0x2ae555.tenantURL,
+          'value': _0x2ae555.tenantURL,
+          'validateInput': _0x166286 => {
+            const _0xa7d431 = this.validateURL(_0x166286);
+            return _0xa7d431.valid ? null : _0xa7d431.error;
+          }
+        });
+        if (!_0x5e389a) {
+          return;
+        }
+        const _0x59c9ba = _0x2ae555.accessToken.length > 0x10 ? _0x2ae555.accessToken.substring(0x0, 0x8) + '...' + _0x2ae555.accessToken.substring(_0x2ae555.accessToken.length - 0x8) : _0x2ae555.accessToken;
+        const _0x4b255a = await vscode.window.showInputBox({
+          'prompt': '输入 accessToken',
+          'placeHolder': "当前: " + _0x59c9ba,
+          'password': true,
+          'validateInput': _0x562ca2 => {
+            const _0x2ffb63 = this.validateToken(_0x562ca2);
+            return _0x2ffb63.valid ? null : _0x2ffb63.error;
+          }
+        });
+        if (!_0x4b255a) {
+          return;
+        }
+        const _0x3bcac3 = this.validateURL(_0x5e389a);
+        const _0x43007b = this.validateToken(_0x4b255a);
+        if (!_0x3bcac3.valid || !_0x43007b.valid) {
+          vscode.window.showErrorMessage("输入验证失败，请重试");
+          return;
+        }
+        const _0x150375 = await this.updateSessionsData(_0x3bcac3.url, _0x43007b.token);
+        if (_0x150375.success) {
+          vscode.window.showInformationMessage("会话数据更新成功！");
+          const _0x26efd8 = await vscode.window.showInformationMessage("会话数据更新成功！", '显示更新后的数据');
+          if (_0x26efd8 === "显示更新后的数据") {
+            const _0x12509b = await vscode.workspace.openTextDocument({
+              'content': JSON.stringify(_0x150375.data, null, 0x2),
+              'language': "json"
+            });
+            await vscode.window.showTextDocument(_0x12509b);
+          }
+        } else {
+          vscode.window.showErrorMessage("更新会话数据失败: " + _0x150375.error);
+        }
+      }
+    } catch (_0x5571a3) {
+      vscode.window.showErrorMessage("错误: " + _0x5571a3.message);
+    }
+  }
+  ["setupTokenInjection"]() {
+    try {
+      if (typeof window !== "undefined" && window.fetch) {
+        this.setupFetchInterception();
+        this.logger.info("Token injection setup completed for browser environment");
+      } else {
+        this.logger.info('Not in browser environment, skipping token injection setup');
+      }
+    } catch (_0x528409) {
+      this.logger.error('Failed to setup token injection:', _0x528409);
+    }
+  }
+  ["setupFetchInterception"]() {
+    const _0x3b5147 = window.fetch;
+    const _0x366bad = this;
+    window.fetch = async function (_0x41250b, _0x5e9963 = {}) {
+      try {
+        const _0x437a7d = await _0x366bad.injectTokenToRequest(_0x41250b, _0x5e9963);
+        return _0x3b5147.call(this, _0x41250b, _0x437a7d);
+      } catch (_0x16788f) {
+        _0x366bad.logger.error("Token injection failed for fetch request:", _0x16788f);
+        return _0x3b5147.call(this, _0x41250b, _0x5e9963);
+      }
+    };
+    this.logger.info("Fetch API interception setup completed");
+  }
+  async ["injectTokenToRequest"](_0x3e8cc2, _0x2a021b = {}) {
+    try {
+      const _0x336f70 = await this.getAccessToken();
+      if (!_0x336f70.success || !_0x336f70.accessToken) {
+        return _0x2a021b;
+      }
+      if (this.isAugmentRequest(_0x3e8cc2, _0x336f70.tenantURL)) {
+        const _0x35f0b1 = _0x2a021b.headers || {};
+        const _0x3f7116 = Object.keys(_0x35f0b1).some(_0x1e4b4b => _0x1e4b4b.toLowerCase() === "authorization");
+        if (!_0x3f7116) {
+          _0x35f0b1.Authorization = "Bearer " + _0x336f70.accessToken;
+          this.logger.info("Token injected to request:", _0x3e8cc2);
+        }
+        return {
+          ..._0x2a021b,
+          'headers': _0x35f0b1
+        };
+      }
+      return _0x2a021b;
+    } catch (_0x199076) {
+      this.logger.error('Failed to inject token to request:', _0x199076);
+      return _0x2a021b;
+    }
+  }
+  ['isAugmentRequest'](_0x46b6a5, _0x5cb094) {
+    if (!_0x46b6a5 || !_0x5cb094) {
+      return false;
+    }
+    try {
+      const _0x371aac = new URL(_0x46b6a5);
+      const _0x4a9dfc = new URL(_0x5cb094);
+      return _0x371aac.hostname === _0x4a9dfc.hostname;
+    } catch (_0x4c1c6d) {
+      return _0x46b6a5.includes("augmentcode.com") || _0x46b6a5.includes("api.augment") || _0x5cb094 && _0x46b6a5.includes(_0x5cb094.replace(/https?:\/\//, ''));
+    }
+  }
+  ["dispose"]() {
+    this.isInitialized = false;
+    this.logger.info("Enhanced module disposed");
+  }
+}
+module.exports = AugmentTokenLoginEnhanced;
