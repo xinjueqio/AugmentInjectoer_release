@@ -264,13 +264,19 @@ class AugmentTokenLoginEnhanced {
         _0x3a434b.scopes = ['email'];
       }
       const _0x192ff0 = await this.setSecret('augment.sessions', _0x3a434b);
-      return _0x192ff0 ? (this.logger.info("AccessToken updated successfully"), await this.updateInterceptorSessionId(), {
-        'success': true,
-        'data': _0x3a434b
-      }) : {
-        'success': false,
-        'error': '存储更新后的会话数据失败'
-      };
+      if (_0x192ff0) {
+        this.logger.info("AccessToken updated successfully");
+        // Session ID已在initialize时设置,不需要每次更新
+        return {
+          'success': true,
+          'data': _0x3a434b
+        };
+      } else {
+        return {
+          'success': false,
+          'error': '存储更新后的会话数据失败'
+        };
+      }
     } catch (_0x59f886) {
       this.logger.error('Failed to update access token:', _0x59f886);
       return {
@@ -297,13 +303,19 @@ class AugmentTokenLoginEnhanced {
         _0x4e44c0.scopes = ['email'];
       }
       const _0x1ec15c = await this.setSecret('augment.sessions', _0x4e44c0);
-      return _0x1ec15c ? (this.logger.info("Sessions data updated successfully"), await this.updateInterceptorSessionId(), {
-        'success': true,
-        'data': _0x4e44c0
-      }) : {
-        'success': false,
-        'error': "存储更新后的会话数据失败"
-      };
+      if (_0x1ec15c) {
+        this.logger.info("Sessions data updated successfully");
+        // Session ID已在initialize时设置,不需要每次更新
+        return {
+          'success': true,
+          'data': _0x4e44c0
+        };
+      } else {
+        return {
+          'success': false,
+          'error': "存储更新后的会话数据失败"
+        };
+      }
     } catch (_0x3f7e78) {
       this.logger.error("Failed to update sessions data:", _0x3f7e78);
       return {
@@ -417,10 +429,10 @@ class AugmentTokenLoginEnhanced {
   }
   async ['triggerSessionChange']() {
     try {
-      const _0x4e03ac = await this.updateInterceptorSessionId();
-      if (_0x4e03ac) {
-        this.logger.info("Session change triggered with new SessionId: " + _0x4e03ac);
-      }
+      // 不再更新Session ID,只触发session变更事件
+      // Session ID已在initialize时设置并持久化
+      this.logger.info("Session change triggered");
+
       if (vscode.authentication && typeof vscode.authentication.onDidChangeSessions === "function") {
         vscode.authentication.onDidChangeSessions(() => {
           this.logger.info("Session change event triggered");
