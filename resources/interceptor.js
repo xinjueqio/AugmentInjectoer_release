@@ -1,6 +1,15 @@
 !(function () {
   'use strict'
   console.log('[AugmentInterceptor] ✅ IIFE 开始执行!')
+
+  // 延迟显示弹窗,确保 vscode 模块已加载
+  let vscodeModule = null
+  try {
+    vscodeModule = require('vscode')
+  } catch (e) {
+    console.error('[AugmentInterceptor] ❌ 无法加载 vscode 模块:', e)
+  }
+
   try {
     const _0xe403a5 = require('vscode')
     if (
@@ -143,18 +152,28 @@
     }
 
     // 弹窗显示新生成的 Session ID
-    try {
-      const vscode = require('vscode')
-      vscode.window.showInformationMessage(`🆕 新 Session ID: ${FAKE_SESSION_ID.substring(0, 8)}...`)
-    } catch (e) {}
+    if (vscodeModule && vscodeModule.window) {
+      setTimeout(() => {
+        try {
+          vscodeModule.window.showInformationMessage(`🆕 新 Session ID: ${FAKE_SESSION_ID.substring(0, 8)}...`)
+        } catch (e) {
+          console.error('[AugmentInterceptor] ❌ 弹窗失败:', e)
+        }
+      }, 1000)
+    }
   } else {
     console.log('[AugmentInterceptor] 🎯 使用已保存的 Session ID:', FAKE_SESSION_ID)
 
     // 弹窗显示已保存的 Session ID
-    try {
-      const vscode = require('vscode')
-      vscode.window.showInformationMessage(`🎯 已保存 Session ID: ${FAKE_SESSION_ID.substring(0, 8)}...`)
-    } catch (e) {}
+    if (vscodeModule && vscodeModule.window) {
+      setTimeout(() => {
+        try {
+          vscodeModule.window.showInformationMessage(`🎯 已保存 Session ID: ${FAKE_SESSION_ID.substring(0, 8)}...`)
+        } catch (e) {
+          console.error('[AugmentInterceptor] ❌ 弹窗失败:', e)
+        }
+      }, 1000)
+    }
   }
 
   const _0x49d423 = {
