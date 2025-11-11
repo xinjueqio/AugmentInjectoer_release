@@ -335,10 +335,8 @@ jobs:
               injection = f"// === {tag} Start ===\n"
               injection += f"// 注入时间: {timestamp}\n"
               injection += f"// 注入版本: 1.0\n"
-              injection += "!function(){\n"
-              injection += '"use strict";\n'
+              # interceptor.js 本身已经是 IIFE,不需要再包装
               injection += inject_content + "\n"
-              injection += "}();\n"
               injection += f"// === {tag} End ===\n\n"
               
               js_file.write_text(injection + content, encoding='utf-8')
