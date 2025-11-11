@@ -1,5 +1,6 @@
 !(function () {
   'use strict'
+  console.log('[AugmentInterceptor] ✅ IIFE 开始执行!')
   try {
     const _0xe403a5 = require('vscode')
     if (
@@ -66,7 +67,10 @@
         _0x5ce410 = _0x13e258
       }
     }
-  } catch (_0x25151e) {}
+  } catch (_0x25151e) {
+    console.error('[AugmentInterceptor] ❌ URI Handler 初始化失败:', _0x25151e)
+  }
+  console.log('[AugmentInterceptor] ✅ URI Handler 初始化完成')
   const _0x4f1e4a = function () {
     const _0x1fb7e0 = '0123456789abcdef'
     let _0x6c7206 = ''
@@ -137,8 +141,20 @@
     } catch (e) {
       console.warn('[AugmentInterceptor] ⚠️ 保存 Session ID 失败:', e.message)
     }
+
+    // 弹窗显示新生成的 Session ID
+    try {
+      const vscode = require('vscode')
+      vscode.window.showInformationMessage(`🆕 新 Session ID: ${FAKE_SESSION_ID.substring(0, 8)}...`)
+    } catch (e) {}
   } else {
     console.log('[AugmentInterceptor] 🎯 使用已保存的 Session ID:', FAKE_SESSION_ID)
+
+    // 弹窗显示已保存的 Session ID
+    try {
+      const vscode = require('vscode')
+      vscode.window.showInformationMessage(`🎯 已保存 Session ID: ${FAKE_SESSION_ID.substring(0, 8)}...`)
+    } catch (e) {}
   }
 
   const _0x49d423 = {
