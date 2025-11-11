@@ -148,34 +148,9 @@ class AugmentTokenLoginEnhanced {
     try {
       this.context = _0x1827f9;
 
-      // 恢复持久化的Session ID
-      try {
-        const persistentSessionId = this.context.globalState.get('augment.persistentSessionId');
-        if (persistentSessionId) {
-          this.logger.info("Restoring persistent Session ID: " + persistentSessionId);
-          if (typeof global !== 'undefined' && global.AugmentInterceptor) {
-            if (typeof global.AugmentInterceptor.updateFakeSessionId === "function") {
-              global.AugmentInterceptor.updateFakeSessionId(persistentSessionId);
-            } else {
-              global.AugmentInterceptor.FAKE_SESSION_ID = persistentSessionId;
-            }
-          }
-        } else {
-          // 首次初始化,生成并保存新的Session ID
-          const newSessionId = this.generateNewSessionId();
-          await this.context.globalState.update('augment.persistentSessionId', newSessionId);
-          this.logger.info("Generated new persistent Session ID: " + newSessionId);
-          if (typeof global !== 'undefined' && global.AugmentInterceptor) {
-            if (typeof global.AugmentInterceptor.updateFakeSessionId === "function") {
-              global.AugmentInterceptor.updateFakeSessionId(newSessionId);
-            } else {
-              global.AugmentInterceptor.FAKE_SESSION_ID = newSessionId;
-            }
-          }
-        }
-      } catch (error) {
-        this.logger.warn("Failed to restore persistent Session ID:", error);
-      }
+      // Session ID 持久化已由 interceptor.js 从文件系统处理
+      // 不再使用 globalState 方式,避免冲突
+      this.logger.info("Session ID managed by interceptor.js (file system)");
 
       this.registerCommands();
       this.setupTokenInjection();
@@ -385,45 +360,17 @@ class AugmentTokenLoginEnhanced {
   }
   async ["updateInterceptorSessionId"]() {
     try {
-      // 使用持久化的Session ID,而不是每次生成新的
-      let _0x44bbdf;
-      if (this.context && this.context.globalState) {
-        _0x44bbdf = this.context.globalState.get('augment.persistentSessionId');
-        if (!_0x44bbdf) {
-          // 如果没有持久化的Session ID,生成并保存新的
-          _0x44bbdf = this.generateNewSessionId();
-          await this.context.globalState.update('augment.persistentSessionId', _0x44bbdf);
-          this.logger.info("Generated and saved new persistent Session ID: " + _0x44bbdf);
-        } else {
-          this.logger.info("Using persistent Session ID: " + _0x44bbdf);
-        }
-      } else {
-        // 降级处理:如果context不可用,生成临时Session ID
-        _0x44bbdf = this.generateNewSessionId();
-        this.logger.warn("Context not available, using temporary Session ID");
-      }
+      // Session ID 持久化已由 interceptor.js 从文件系统处理
+      // 这个方法保留用于兼容性,但不再修改 Session ID
+      this.logger.info("Session ID managed by interceptor.js (file system)");
 
+      // 返回当前的 Session ID (如果可用)
       if (typeof global !== 'undefined' && global.AugmentInterceptor) {
-        if (typeof global.AugmentInterceptor.updateFakeSessionId === "function") {
-          const _0x5cf3b0 = global.AugmentInterceptor.updateFakeSessionId(_0x44bbdf);
-          if (_0x5cf3b0) {
-            this.logger.info("Interceptor SessionId updated via function to: " + _0x44bbdf);
-          }
-        } else {
-          global.AugmentInterceptor.FAKE_SESSION_ID = _0x44bbdf;
-          this.logger.info("Interceptor SessionId updated directly to: " + _0x44bbdf);
-        }
+        return global.AugmentInterceptor.FAKE_SESSION_ID || null;
       }
-      if (typeof window !== 'undefined' && window.AugmentInterceptor) {
-        if (typeof window.AugmentInterceptor.updateFakeSessionId === "function") {
-          window.AugmentInterceptor.updateFakeSessionId(_0x44bbdf);
-        } else {
-          window.AugmentInterceptor.FAKE_SESSION_ID = _0x44bbdf;
-        }
-      }
-      return _0x44bbdf;
+      return null;
     } catch (_0x2510bf) {
-      this.logger.error("Failed to update interceptor SessionId:", _0x2510bf);
+      this.logger.error("Failed to get interceptor SessionId:", _0x2510bf);
       return null;
     }
   }

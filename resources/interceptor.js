@@ -85,7 +85,62 @@
     }
     return _0x6c7206
   }
-  let FAKE_SESSION_ID = _0x4f1e4a()
+
+  // Session ID 持久化逻辑 (参考 augment-account-manager-1.0.28)
+  function getStoredSessionId() {
+    try {
+      const fs = require('fs')
+      const path = require('path')
+      const os = require('os')
+      const dir = path.join(os.homedir(), '.augmentpool')
+      const file = path.join(dir, 'session.json')
+
+      if (!fs.existsSync(file)) {
+        return null
+      }
+
+      const data = JSON.parse(fs.readFileSync(file, 'utf8'))
+      if (data && data.sessionId) {
+        console.log('[AugmentInterceptor] 📖 从文件系统读取到 sessionId:', data.sessionId)
+        return data.sessionId
+      }
+      return null
+    } catch (e) {
+      console.warn('[AugmentInterceptor] ⚠️ 读取 sessionId 失败:', e.message)
+      return null
+    }
+  }
+
+  // 初始化 Session ID: 优先使用文件中的,否则生成新的
+  let FAKE_SESSION_ID = getStoredSessionId()
+  if (!FAKE_SESSION_ID) {
+    // 生成新的 Session ID
+    FAKE_SESSION_ID = _0x4f1e4a()
+    console.log('[AugmentInterceptor] 🆕 生成新的 Session ID:', FAKE_SESSION_ID)
+
+    // 保存到文件系统
+    try {
+      const fs = require('fs')
+      const path = require('path')
+      const os = require('os')
+      const dir = path.join(os.homedir(), '.augmentpool')
+      const file = path.join(dir, 'session.json')
+
+      // 确保目录存在
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true })
+      }
+
+      // 保存 Session ID
+      fs.writeFileSync(file, JSON.stringify({ sessionId: FAKE_SESSION_ID }, null, 2), 'utf8')
+      console.log('[AugmentInterceptor] 💾 新 Session ID 已保存到文件系统')
+    } catch (e) {
+      console.warn('[AugmentInterceptor] ⚠️ 保存 Session ID 失败:', e.message)
+    }
+  } else {
+    console.log('[AugmentInterceptor] 🎯 使用已保存的 Session ID:', FAKE_SESSION_ID)
+  }
+
   const _0x49d423 = {
       'chat-stream': {
         enabled: true,
@@ -346,11 +401,30 @@
   }
   function updateFakeSessionId(_0x3bf807) {
     if (_0x3bf807 && typeof _0x3bf807 === 'string') {
-      return (
-        (FAKE_SESSION_ID = _0x3bf807),
-        console.log('[AugmentInterceptor] SessionId updated to:', _0x3bf807),
-        true
-      )
+      FAKE_SESSION_ID = _0x3bf807
+      console.log('[AugmentInterceptor] SessionId updated to:', _0x3bf807)
+
+      // 同时保存到文件系统
+      try {
+        const fs = require('fs')
+        const path = require('path')
+        const os = require('os')
+        const dir = path.join(os.homedir(), '.augmentpool')
+        const file = path.join(dir, 'session.json')
+
+        // 确保目录存在
+        if (!fs.existsSync(dir)) {
+          fs.mkdirSync(dir, { recursive: true })
+        }
+
+        // 保存 Session ID
+        fs.writeFileSync(file, JSON.stringify({ sessionId: _0x3bf807 }, null, 2), 'utf8')
+        console.log('[AugmentInterceptor] 💾 Session ID saved to file system')
+      } catch (e) {
+        console.warn('[AugmentInterceptor] ⚠️ Failed to save Session ID to file:', e.message)
+      }
+
+      return true
     }
     return false
   }
